@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-09-11T10:11:29Z</date>
+    <date>2014-09-11T10:11:09Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -9,14 +9,17 @@
     </groups>
     <templates>
         <template>
-            <template>TP-HW-SRV-VMW-ESXi</template>
-            <name>TP-HW-SRV-VMW-ESXi</name>
+            <template>TP-HW-SRV-DELL-PowerEdge</template>
+            <name>TP-HW-SRV-DELL-PowerEdge</name>
             <groups>
                 <group>
                     <name>Templates</name>
                 </group>
             </groups>
             <applications>
+                <application>
+                    <name>Battery</name>
+                </application>
                 <application>
                     <name>CPU</name>
                 </application>
@@ -43,7 +46,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;raid&quot;]</key>
+                    <key>lld.dell.poweredge[&quot;{HOST.IP}&quot;,&quot;{$SNMP_COMMUNITY}&quot;,&quot;raid&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -65,15 +68,15 @@
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of {#ENAME}</name>
-                            <type>10</type>
-                            <snmp_community/>
+                            <name>State of Array Controller $1</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;{#CNAME}&quot;, &quot;{#ENAME}&quot;, &quot;{#DEVID}&quot;, &quot;raid&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.674.10893.1.20.130.1.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>controllerState[{#SNMPVALUE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -100,16 +103,12 @@
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Unknown(0)&#13;
-OK(5)&#13;
-Degraded/Warning(10)&#13;
-Minor failure(15)&#13;
-Major failure(20)&#13;
-Critical failure(25)&#13;
-Non-recoverable error(30)&#13;
-...&#13;
-DMTF Reserved(32768)&#13;
-Vendor Specific(65535)</description>
+                            <description>unknown(0)&#13;
+ready(1)&#13;
+failed(2)&#13;
+online(3)&#13;
+offline(4)&#13;
+degraded(6)</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -121,8 +120,101 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;{#CNAME}&quot;, &quot;{#ENAME}&quot;, &quot;{#DEVID}&quot;, &quot;raid&quot;].last(0)}#5</expression>
-                            <name>State of {#ENAME} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-SRV-DELL-PowerEdge:controllerState[{#SNMPVALUE}].last(0)}#1&amp;{TP-HW-SRV-DELL-PowerEdge:controllerState[{#SNMPVALUE}].last(0)}#3</expression>
+                            <name>State of Array Controller {#SNMPVALUE} was abnormal on {HOST.NAME}</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Battery</name>
+                    <type>10</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>lld.dell.poweredge[&quot;{HOST.IP}&quot;,&quot;{$SNMP_COMMUNITY}&quot;,&quot;bat&quot;]</key>
+                    <delay>3600</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>:</filter>
+                    <lifetime>7</lifetime>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>State of Battery $1</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.674.10892.1.600.50.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>batteryStatus[{#SNMPVALUE}]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>other(1)&#13;
+unknown(2)&#13;
+ok(3)&#13;
+nonCritical(4)&#13;
+critical(5)&#13;
+nonRecoverable(6)</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Battery</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>Dell Open Manage System Status</name>
+                            </valuemap>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{TP-HW-SRV-DELL-PowerEdge:batteryStatus[{#SNMPVALUE}].last(0)}#3</expression>
+                            <name>State of Battery {#SNMPVALUE} was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -138,7 +230,7 @@ Vendor Specific(65535)</description>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;cpu&quot;]</key>
+                    <key>lld.dell.poweredge[&quot;{HOST.IP}&quot;,&quot;{$SNMP_COMMUNITY}&quot;,&quot;cpu&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -160,15 +252,15 @@ Vendor Specific(65535)</description>
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of {#ENAME}</name>
-                            <type>10</type>
-                            <snmp_community/>
+                            <name>Status of CPU Socket $1</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;{#CNAME}&quot;, &quot;{#ENAME}&quot;, &quot;{#DEVID}&quot;, &quot;cpu&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.674.10892.1.1100.32.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>processorDeviceStatusStatus[{#SNMPVALUE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -195,29 +287,27 @@ Vendor Specific(65535)</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Unknown(0)&#13;
-OK(5)&#13;
-Degraded/Warning(10)&#13;
-Minor failure(15)&#13;
-Major failure(20)&#13;
-Critical failure(25)&#13;
-Non-recoverable error(30)&#13;
-...&#13;
-DMTF Reserved(32768)&#13;
-Vendor Specific(65535)</description>
+                            <description>other(1)&#13;
+unknown(2)&#13;
+ok(3)&#13;
+nonCritical(4)&#13;
+critical(5)&#13;
+nonRecoverable(6)</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
                                     <name>CPU</name>
                                 </application>
                             </applications>
-                            <valuemap/>
+                            <valuemap>
+                                <name>Dell Open Manage System Status</name>
+                            </valuemap>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;{#CNAME}&quot;, &quot;{#ENAME}&quot;, &quot;{#DEVID}&quot;, &quot;cpu&quot;].last(0)}#5</expression>
-                            <name>State of {#ENAME} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-SRV-DELL-PowerEdge:processorDeviceStatusStatus[{#SNMPVALUE}].last(0)}#3</expression>
+                            <name>Status of CPU {#SNMPVALUE} was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -233,7 +323,7 @@ Vendor Specific(65535)</description>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;fan&quot;]</key>
+                    <key>lld.dell.poweredge[&quot;{HOST.IP}&quot;,&quot;{$SNMP_COMMUNITY}&quot;,&quot;fan&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -255,15 +345,15 @@ Vendor Specific(65535)</description>
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of {#ENAME}</name>
-                            <type>10</type>
-                            <snmp_community/>
+                            <name>State of Fan $1</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;{#CNAME}&quot;, &quot;{#ENAME}&quot;, &quot;{#DEVID}&quot;, &quot;fan&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.674.10892.1.700.12.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>coolingDeviceStatus[{#SNMPVALUE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -290,16 +380,16 @@ Vendor Specific(65535)</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Unknown(0)&#13;
-OK(5)&#13;
-Degraded/Warning(10)&#13;
-Minor failure(15)&#13;
-Major failure(20)&#13;
-Critical failure(25)&#13;
-Non-recoverable error(30)&#13;
-...&#13;
-DMTF Reserved(32768)&#13;
-Vendor Specific(65535)</description>
+                            <description>other(1)&#13;
+unknown(2)&#13;
+ok(3)&#13;
+nonCriticalUpper(4)&#13;
+criticalUpper(5)&#13;
+nonRecoverableUpper(6)&#13;
+nonCriticalLower(7)&#13;
+criticalLower(8)&#13;
+nonRecoverableLower(9)&#13;
+failed(10)</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -311,8 +401,8 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;{#CNAME}&quot;, &quot;{#ENAME}&quot;, &quot;{#DEVID}&quot;, &quot;fan&quot;].last(0)}#5</expression>
-                            <name>State of {#ENAME} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-SRV-DELL-PowerEdge:coolingDeviceStatus[{#SNMPVALUE}].last(0)}#3</expression>
+                            <name>State of Fan {#SNMPVALUE} was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -328,7 +418,7 @@ Vendor Specific(65535)</description>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;mem&quot;]</key>
+                    <key>lld.dell.poweredge[&quot;{HOST.IP}&quot;,&quot;{$SNMP_COMMUNITY}&quot;,&quot;mem&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -350,15 +440,15 @@ Vendor Specific(65535)</description>
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of {#ENAME}</name>
-                            <type>10</type>
-                            <snmp_community/>
+                            <name>State of Memory Module $1</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;{#CNAME}&quot;, &quot;{#ENAME}&quot;, &quot;{#DEVID}&quot;, &quot;mem&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.674.10892.1.1100.50.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>memoryDeviceStatus[{#SNMPVALUE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -385,29 +475,27 @@ Vendor Specific(65535)</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Unknown(0)&#13;
-OK(5)&#13;
-Degraded/Warning(10)&#13;
-Minor failure(15)&#13;
-Major failure(20)&#13;
-Critical failure(25)&#13;
-Non-recoverable error(30)&#13;
-...&#13;
-DMTF Reserved(32768)&#13;
-Vendor Specific(65535)</description>
+                            <description>other(1)&#13;
+unknown(2)&#13;
+ok(3)&#13;
+nonCritical(4)&#13;
+critical(5)&#13;
+nonRecoverable(6)</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
                                     <name>Memory</name>
                                 </application>
                             </applications>
-                            <valuemap/>
+                            <valuemap>
+                                <name>Dell Open Manage System Status</name>
+                            </valuemap>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;{#CNAME}&quot;, &quot;{#ENAME}&quot;, &quot;{#DEVID}&quot;, &quot;mem&quot;].last(0)}#5</expression>
-                            <name>State of {#ENAME} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-SRV-DELL-PowerEdge:memoryDeviceStatus[{#SNMPVALUE}].last(0)}#3</expression>
+                            <name>State of Memory Module {#SNMPVALUE} was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -423,7 +511,7 @@ Vendor Specific(65535)</description>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;disk&quot;]</key>
+                    <key>lld.dell.poweredge[&quot;{HOST.IP}&quot;,&quot;{$SNMP_COMMUNITY}&quot;,&quot;pdisk&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -445,15 +533,15 @@ Vendor Specific(65535)</description>
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of {#ENAME}</name>
-                            <type>10</type>
-                            <snmp_community/>
+                            <name>S.M.A.R.T Status of Physical Drive $1</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>chk.vmw.hw.py[&quot;-g&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;{#CNAME}&quot;, &quot;{#ENAME}&quot;, &quot;{#DEVID}&quot;, &quot;disk&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.674.10893.1.20.130.4.1.31.{#SNMPINDEX}</snmp_oid>
+                            <key>arrayDiskSmartAlertIndication[{#SNMPVALUE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -480,16 +568,73 @@ Vendor Specific(65535)</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Unknown(0)&#13;
-OK(5)&#13;
-Degraded/Warning(10)&#13;
-Minor failure(15)&#13;
-Major failure(20)&#13;
-Critical failure(25)&#13;
-Non-recoverable error(30)&#13;
-...&#13;
-DMTF Reserved(32768)&#13;
-Vendor Specific(65535)</description>
+                            <description>no(1)&#13;
+yes(2)</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Disk</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>State of Physical Drive $1</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.674.10893.1.20.130.4.1.4.{#SNMPINDEX}</snmp_oid>
+                            <key>arrayDiskState[{#SNMPVALUE}]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>unknown(0)&#13;
+ready(1)&#13;
+failed(2)&#13;
+online(3)&#13;
+offline(4)&#13;
+degraded(6)&#13;
+recovering(7)&#13;
+removed(11)&#13;
+non-raid(13)&#13;
+notReady(14)&#13;
+resynching(15)&#13;
+replacing(22)&#13;
+spinningDown(23)&#13;
+rebuild(24)&#13;
+noMedia(25)&#13;
+formatting(26)&#13;
+diagnostics(28)&#13;
+predictiveFailure(34)&#13;
+initializing(35)&#13;
+foreign(39)&#13;
+clear(40)&#13;
+unsupported(41)&#13;
+incompatible(53)&#13;
+readOnly(56)</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -501,8 +646,17 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw.py[&quot;-g&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;{#CNAME}&quot;, &quot;{#ENAME}&quot;, &quot;{#DEVID}&quot;, &quot;disk&quot;].last(0)}#5</expression>
-                            <name>State of {#ENAME} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-SRV-DELL-PowerEdge:arrayDiskSmartAlertIndication[{#SNMPVALUE}].last(0)}#1</expression>
+                            <name>S.M.A.R.T status of Physical Drive {#SNMPVALUE} was abnormal on {HOST.NAME}</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{TP-HW-SRV-DELL-PowerEdge:arrayDiskState[{#SNMPVALUE}].last(0)}#1&amp;{TP-HW-SRV-DELL-PowerEdge:arrayDiskState[{#SNMPVALUE}].last(0)}#3</expression>
+                            <name>State of Physical Drive {#SNMPVALUE} was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -518,7 +672,7 @@ Vendor Specific(65535)</description>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;ps&quot;]</key>
+                    <key>lld.dell.poweredge[&quot;{HOST.IP}&quot;,&quot;{$SNMP_COMMUNITY}&quot;,&quot;ps&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -540,15 +694,15 @@ Vendor Specific(65535)</description>
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of {#ENAME}</name>
-                            <type>10</type>
-                            <snmp_community/>
+                            <name>State of Power Supply $1</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>chk.vmw.hw.py[&quot;-g&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;{#CNAME}&quot;, &quot;{#ENAME}&quot;, &quot;{#DEVID}&quot;, &quot;ps&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.674.10892.1.600.12.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>powerSupplyStatus[{#SNMPVALUE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -575,33 +729,36 @@ Vendor Specific(65535)</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Unknown(0)&#13;
-OK(5)&#13;
-Degraded/Warning(10)&#13;
-Minor failure(15)&#13;
-Major failure(20)&#13;
-Critical failure(25)&#13;
-Non-recoverable error(30)&#13;
-...&#13;
-DMTF Reserved(32768)&#13;
-Vendor Specific(65535)</description>
+                            <description>other(1)&#13;
+unknown(2)&#13;
+ok(3)&#13;
+nonCritical(4)&#13;
+critical(5)&#13;
+nonRecoverable(6)</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
                                     <name>Power Supply</name>
                                 </application>
                             </applications>
-                            <valuemap/>
+                            <valuemap>
+                                <name>Dell Open Manage System Status</name>
+                            </valuemap>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw.py[&quot;-g&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;{#CNAME}&quot;, &quot;{#ENAME}&quot;, &quot;{#DEVID}&quot;, &quot;ps&quot;].last(0)}#5</expression>
-                            <name>State of {#ENAME} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-SRV-DELL-PowerEdge:powerSupplyStatus[{#SNMPVALUE}].last(0)}#3</expression>
+                            <name>State of Power Supply {#SNMPVALUE} was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
-                            <description/>
+                            <description>other(1)&#13;
+unknown(2)&#13;
+ok(3)&#13;
+nonCritical(4)&#13;
+critical(5)&#13;
+nonRecoverable(6)</description>
                             <type>0</type>
                         </trigger_prototype>
                     </trigger_prototypes>
@@ -613,7 +770,7 @@ Vendor Specific(65535)</description>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;temp&quot;]</key>
+                    <key>lld.dell.poweredge[&quot;{HOST.IP}&quot;,&quot;{$SNMP_COMMUNITY}&quot;,&quot;temp&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -635,15 +792,15 @@ Vendor Specific(65535)</description>
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of {#ENAME}</name>
-                            <type>10</type>
-                            <snmp_community/>
+                            <name>State of Temperature Sensor $1</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;{#CNAME}&quot;, &quot;{#ENAME}&quot;, &quot;{#DEVID}&quot;, &quot;temp&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.674.10892.1.700.20.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>temperatureProbeStatus[{#SNMPVALUE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -670,16 +827,16 @@ Vendor Specific(65535)</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Unknown(0)&#13;
-OK(5)&#13;
-Degraded/Warning(10)&#13;
-Minor failure(15)&#13;
-Major failure(20)&#13;
-Critical failure(25)&#13;
-Non-recoverable error(30)&#13;
-...&#13;
-DMTF Reserved(32768)&#13;
-Vendor Specific(65535)</description>
+                            <description>other(1)&#13;
+unknown(2)&#13;
+ok(3)&#13;
+nonCriticalUpper(4)&#13;
+criticalUpper(5)&#13;
+nonRecoverableUpper(6)&#13;
+nonCriticalLower(7)&#13;
+criticalLower(8)&#13;
+nonRecoverableLower(9)&#13;
+failed(10)</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -691,8 +848,109 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;, &quot;{HOST.IP}&quot;, &quot;{$HOSTUSER}&quot;, &quot;{$HOSTPWD}&quot;, &quot;{#CNAME}&quot;, &quot;{#ENAME}&quot;, &quot;{#DEVID}&quot;, &quot;temp&quot;].last(0)}#5</expression>
-                            <name>State of {#ENAME} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-SRV-DELL-PowerEdge:temperatureProbeStatus[{#SNMPVALUE}].last(0)}#3</expression>
+                            <name>State of Temperature Sensor {#SNMPVALUE} was abnormal on {HOST.NAME}</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Virtual Disk</name>
+                    <type>10</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>lld.dell.poweredge[&quot;{HOST.IP}&quot;,&quot;{$SNMP_COMMUNITY}&quot;,&quot;vdisk&quot;]</key>
+                    <delay>3600</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>:</filter>
+                    <lifetime>7</lifetime>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>State of Virtual Disk $1</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.674.10893.1.20.140.1.1.4.{#SNMPINDEX}</snmp_oid>
+                            <key>virtualDiskState[{#SNMPVALUE}]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>unknown(0)&#13;
+ready(1)&#13;
+failed(2)&#13;
+online(3)&#13;
+offline(4)&#13;
+degraded(6)&#13;
+verifying(7)&#13;
+resynching(15)&#13;
+regenerating(16)&#13;
+failedRedundancy(18)&#13;
+rebuilding(24)&#13;
+formatting(26)&#13;
+reconstructing(32)&#13;
+initializing(35)&#13;
+backgroundInit(36)&#13;
+permanentlyDegraded(52)</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Disk</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{TP-HW-SRV-DELL-PowerEdge:virtualDiskState[{#SNMPVALUE}].last()}#1&amp;{TP-HW-SRV-DELL-PowerEdge:virtualDiskState[{#SNMPVALUE}].last()}#3</expression>
+                            <name>State of Virtual Disk {#SNMPVALUE} was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -706,16 +964,12 @@ Vendor Specific(65535)</description>
             </discovery_rules>
             <macros>
                 <macro>
-                    <macro>{$HOSTPWD}</macro>
-                    <value/>
-                </macro>
-                <macro>
-                    <macro>{$HOSTUSER}</macro>
+                    <macro>{$SNMP_COMMUNITY}</macro>
                     <value/>
                 </macro>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.1</value>
+                    <value>1.0.0</value>
                 </macro>
             </macros>
             <templates/>

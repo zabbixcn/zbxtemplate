@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-05-28T18:41:31Z</date>
+    <date>2014-09-11T10:10:18Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -9,8 +9,8 @@
     </groups>
     <templates>
         <template>
-            <template>TP-BS-SNMP-Net-Interface</template>
-            <name>TP-BS-SNMP-Net-Interface</name>
+            <template>TP-BS-SNMP-NET-Interface</template>
+            <name>TP-BS-SNMP-NET-Interface</name>
             <groups>
                 <group>
                     <name>Templates</name>
@@ -28,7 +28,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>lld.net.if.sh[&quot;{HOST.CONN1}&quot;, &quot;{$SNMP_COMMUNITY}&quot;]</key>
+                    <key>lld.net.if[&quot;{HOST.IP}&quot;, &quot;{$SNMP_COMMUNITY}&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -50,15 +50,15 @@
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description>Using {#IF_INDEX} or {#IF_DESC} for filter</description>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
                             <name>Inbound Bps on interface $1 (SNMP)</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid>IF-MIB::ifInOctets.{#IF_INDEX}</snmp_oid>
-                            <key>ifInOctets[{#IF_DESC}]</key>
+                            <snmp_oid>IF-MIB::ifInOctets.{#SNMPINDEX}</snmp_oid>
+                            <key>ifInOctets[{#SNMPVALUE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -99,8 +99,8 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid>IF-MIB::ifInDiscards.{#IF_INDEX}</snmp_oid>
-                            <key>ifInDiscards[{#IF_DESC}]</key>
+                            <snmp_oid>IF-MIB::ifInDiscards.{#SNMPINDEX}</snmp_oid>
+                            <key>ifInDiscards[{#SNMPVALUE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -141,8 +141,8 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid>IF-MIB::ifInErrors.{#IF_INDEX}</snmp_oid>
-                            <key>ifInErrors[{#IF_DESC}]</key>
+                            <snmp_oid>IF-MIB::ifInErrors.{#SNMPINDEX}</snmp_oid>
+                            <key>ifInErrors[{#SNMPVALUE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -183,8 +183,8 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid>IF-MIB::ifOperStatus.{#IF_INDEX}</snmp_oid>
-                            <key>ifOperStatus[{#IF_DESC}]</key>
+                            <snmp_oid>IF-MIB::ifOperStatus.{#SNMPINDEX}</snmp_oid>
+                            <key>ifOperStatus[{#SNMPVALUE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -211,7 +211,13 @@
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description/>
+                            <description>up(1)&#13;
+down(2)&#13;
+testing(3)&#13;
+unknown(4)&#13;
+dormant(5)&#13;
+notPresent(6)&#13;
+lowerLayerDown(7)</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -219,7 +225,7 @@
                                 </application>
                             </applications>
                             <valuemap>
-                                <name>SNMP Interface Status (ifOperStatus)</name>
+                                <name>SNMP IF-MIB:ifOperStatus</name>
                             </valuemap>
                         </item_prototype>
                         <item_prototype>
@@ -227,8 +233,8 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid>IF-MIB::ifOutOctets.{#IF_INDEX}</snmp_oid>
-                            <key>ifOutOctets[{#IF_DESC}]</key>
+                            <snmp_oid>IF-MIB::ifOutOctets.{#SNMPINDEX}</snmp_oid>
+                            <key>ifOutOctets[{#SNMPVALUE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -269,8 +275,8 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid>IF-MIB::ifOutDiscards.{#IF_INDEX}</snmp_oid>
-                            <key>ifOutDiscards[{#IF_DESC}]</key>
+                            <snmp_oid>IF-MIB::ifOutDiscards.{#SNMPINDEX}</snmp_oid>
+                            <key>ifOutDiscards[{#SNMPVALUE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -311,8 +317,8 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid>IF-MIB::ifOutErrors.{#IF_INDEX}</snmp_oid>
-                            <key>ifOutErrors[{#IF_DESC}]</key>
+                            <snmp_oid>IF-MIB::ifOutErrors.{#SNMPINDEX}</snmp_oid>
+                            <key>ifOutErrors[{#SNMPVALUE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -351,8 +357,8 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-BS-SNMP-Net-Interface:ifOperStatus[{#IF_DESC}].last(0)}#1</expression>
-                            <name>Status of interface {#IF_DESC} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-BS-SNMP-NET-Interface:ifOperStatus[{#SNMPVALUE}].last(0)}#1</expression>
+                            <name>Status of interface {#SNMPVALUE} was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>2</priority>
@@ -387,8 +393,8 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>TP-BS-SNMP-Net-Interface</host>
-                                        <key>ifInOctets[{#IF_DESC}]</key>
+                                        <host>TP-BS-SNMP-NET-Interface</host>
+                                        <key>ifInOctets[{#SNMPVALUE}]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -399,8 +405,8 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>TP-BS-SNMP-Net-Interface</host>
-                                        <key>ifOutOctets[{#IF_DESC}]</key>
+                                        <host>TP-BS-SNMP-NET-Interface</host>
+                                        <key>ifOutOctets[{#SNMPVALUE}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -411,8 +417,12 @@
             </discovery_rules>
             <macros>
                 <macro>
+                    <macro>{$SNMP_COMMUNITY}</macro>
+                    <value/>
+                </macro>
+                <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.0</value>
+                    <value>2.0.0</value>
                 </macro>
             </macros>
             <templates/>

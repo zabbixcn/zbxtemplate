@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-05-28T18:41:17Z</date>
+    <date>2014-09-15T08:56:31Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -307,7 +307,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-BS-SNMP-Disk:hrStorageUsedInPct[{#SNMPVALUE}].avg(5m)}&gt;80</expression>
+                            <expression>({TRIGGER.VALUE}=0&amp;{TP-BS-SNMP-Disk:hrStorageUsedInPct[{#SNMPVALUE}].min(10m)}&gt;{$DISK.PUSED.WARN})|({TRIGGER.VALUE}=1&amp;{TP-BS-SNMP-Disk:hrStorageUsedInPct[{#SNMPVALUE}].min(10m)}&gt;{$DISK.PUSED.NORM})</expression>
                             <name>Used space of storage {#SNMPVALUE} was too high on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -367,8 +367,16 @@
             </discovery_rules>
             <macros>
                 <macro>
+                    <macro>{$DISK.PUSED.NORM}</macro>
+                    <value>70</value>
+                </macro>
+                <macro>
+                    <macro>{$DISK.PUSED.WARN}</macro>
+                    <value>80</value>
+                </macro>
+                <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.0</value>
+                    <value>1.0.1</value>
                 </macro>
             </macros>
             <templates/>

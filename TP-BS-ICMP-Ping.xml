@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-05-28T18:41:03Z</date>
+    <date>2014-09-15T07:51:33Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -154,8 +154,16 @@
             <discovery_rules/>
             <macros>
                 <macro>
+                    <macro>{$PING.LOSS.WARN}</macro>
+                    <value>20</value>
+                </macro>
+                <macro>
+                    <macro>{$PING.SEC.WARN}</macro>
+                    <value>0.2</value>
+                </macro>
+                <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.0</value>
+                    <value>1.0.1</value>
                 </macro>
             </macros>
             <templates/>
@@ -164,7 +172,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{TP-BS-ICMP-Ping:icmppingloss.min(5m)}&gt;20</expression>
+            <expression>{TP-BS-ICMP-Ping:icmppingloss.min(5m)}&gt;{$PING.LOSS.WARN}</expression>
             <name>Ping loss was too high on {HOST.NAME}</name>
             <url/>
             <status>0</status>
@@ -179,19 +187,14 @@
             </dependencies>
         </trigger>
         <trigger>
-            <expression>{TP-BS-ICMP-Ping:icmppingsec.avg(5m)}&gt;0.2</expression>
+            <expression>{TP-BS-ICMP-Ping:icmppingsec.avg(5m)}&gt;{$PING.SEC.WARN}</expression>
             <name>Ping response time was too high on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
             <description/>
             <type>0</type>
-            <dependencies>
-                <dependency>
-                    <name>{HOST.NAME} was unavailable</name>
-                    <expression>{TP-BS-ICMP-Ping:icmpping.last(0)}=0</expression>
-                </dependency>
-            </dependencies>
+            <dependencies/>
         </trigger>
         <trigger>
             <expression>{TP-BS-ICMP-Ping:icmpping.last(0)}=0</expression>

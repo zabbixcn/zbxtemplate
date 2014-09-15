@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-05-28T18:39:58Z</date>
+    <date>2014-09-15T08:55:29Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -181,7 +181,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-BS-AGNT-FileSystem:vfs.fs.size[{#FSNAME},pused].avg(5m)}&gt;80</expression>
+                            <expression>({TRIGGER.VALUE}=0&amp;{TP-BS-AGNT-FileSystem:vfs.fs.size[{#FSNAME},pused].min(10m)}&gt;{$FS.PUSED.WARN})|({TRIGGER.VALUE}=1&amp;{TP-BS-AGNT-FileSystem:vfs.fs.size[{#FSNAME},pused].min(10m)}&gt;{$FS.PUSED.NORM})</expression>
                             <name>Used space of file system {#FSNAME} was too high on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -241,8 +241,16 @@
             </discovery_rules>
             <macros>
                 <macro>
+                    <macro>{$FS.PUSED.NORM}</macro>
+                    <value>70</value>
+                </macro>
+                <macro>
+                    <macro>{$FS.PUSED.WARN}</macro>
+                    <value>80</value>
+                </macro>
+                <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.0</value>
+                    <value>1.0.1</value>
                 </macro>
             </macros>
             <templates/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-05-28T18:40:32Z</date>
+    <date>2014-09-15T08:03:03Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -71,7 +71,7 @@
             <macros>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.0</value>
+                    <value>1.0.1</value>
                 </macro>
             </macros>
             <templates/>
@@ -80,8 +80,8 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{TP-BS-AGNT-Ping:agent.ping.nodata(2m)}=1</expression>
-            <name>agent was unreachable on {HOST.NAME}</name>
+            <expression>{TP-BS-AGNT-Ping:agent.ping.nodata(5m)}=1</expression>
+            <name>Agent was unreachable on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>3</priority>

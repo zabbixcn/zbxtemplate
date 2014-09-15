@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-05-28T19:07:53Z</date>
+    <date>2014-09-15T09:21:24Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -410,8 +410,32 @@
             <discovery_rules/>
             <macros>
                 <macro>
+                    <macro>{$CPU.PUSED.NORM}</macro>
+                    <value>70</value>
+                </macro>
+                <macro>
+                    <macro>{$CPU.PUSED.WARN}</macro>
+                    <value>80</value>
+                </macro>
+                <macro>
+                    <macro>{$MEM.PFREE.NORM}</macro>
+                    <value>30</value>
+                </macro>
+                <macro>
+                    <macro>{$MEM.PFREE.WARN}</macro>
+                    <value>20</value>
+                </macro>
+                <macro>
+                    <macro>{$SWAP.PFREE.NORM}</macro>
+                    <value>30</value>
+                </macro>
+                <macro>
+                    <macro>{$SWAP.PFREE.WARN}</macro>
+                    <value>20</value>
+                </macro>
+                <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.0</value>
+                    <value>1.0.1</value>
                 </macro>
             </macros>
             <templates>
@@ -501,7 +525,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{TP-SW-OS-AGNT-Windows:system.cpu.util[all,system,avg5].avg(5m)}&gt;80</expression>
+            <expression>({TRIGGER.VALUE}=0&amp;{TP-SW-OS-AGNT-Windows:system.cpu.util[all,system,avg5].min(10m)}&gt;{$CPU.PUSED.WARN})|({TRIGGER.VALUE}=1&amp;{TP-SW-OS-AGNT-Windows:system.cpu.util[all,system,avg5].min(10m)}&gt;{$CPU.PUSED.NORM})</expression>
             <name>CPU usage was too high on {HOST.NAME}</name>
             <url/>
             <status>0</status>
@@ -511,7 +535,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{TP-SW-OS-AGNT-Windows:vm.memory.size[pavailable].avg(5m)}&lt;20</expression>
+            <expression>({TRIGGER.VALUE}=0&amp;{TP-SW-OS-AGNT-Windows:vm.memory.size[pavailable].max(10m)}&lt;{$MEM.PFREE.WARN})|({TRIGGER.VALUE}=1&amp;{TP-SW-OS-AGNT-Windows:vm.memory.size[pavailable].max(10m)}&lt;{$MEM.PFREE.NORM})</expression>
             <name>Memory usage was too high on {HOST.NAME}</name>
             <url/>
             <status>0</status>
@@ -521,7 +545,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{TP-SW-OS-AGNT-Windows:system.swap.size[,pfree].avg(5m)}&lt;20</expression>
+            <expression>({TRIGGER.VALUE}=0&amp;{TP-SW-OS-AGNT-Windows:system.swap.size[,pfree].max(10m)}&lt;{$SWAP.PFREE.WARN})|({TRIGGER.VALUE}=1&amp;{TP-SW-OS-AGNT-Windows:system.swap.size[,pfree].max(10m)}&lt;{$SWAP.PFREE.NORM})</expression>
             <name>Swap usage was too high on {HOST.NAME}</name>
             <url/>
             <status>0</status>

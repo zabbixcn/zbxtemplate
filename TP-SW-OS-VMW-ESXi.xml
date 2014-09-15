@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-05-28T18:44:20Z</date>
+    <date>2014-09-15T09:39:11Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -792,6 +792,22 @@
             </discovery_rules>
             <macros>
                 <macro>
+                    <macro>{$CPU.PUSED.NORM}</macro>
+                    <value>80</value>
+                </macro>
+                <macro>
+                    <macro>{$CPU.PUSED.WARN}</macro>
+                    <value>90</value>
+                </macro>
+                <macro>
+                    <macro>{$MEM.PUSED.NORM}</macro>
+                    <value>80</value>
+                </macro>
+                <macro>
+                    <macro>{$MEM.PUSED.WARN}</macro>
+                    <value>90</value>
+                </macro>
+                <macro>
                     <macro>{$PASSWORD}</macro>
                     <value/>
                 </macro>
@@ -805,7 +821,7 @@
                 </macro>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.0</value>
+                    <value>1.0.1</value>
                 </macro>
             </macros>
             <templates/>
@@ -906,7 +922,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{TP-SW-OS-VMW-ESXi:vmware.hv.cpu.usage.pct.avg(5m)}&gt;90</expression>
+            <expression>({TRIGGER.VALUE}=0&amp;{TP-SW-OS-VMW-ESXi:vmware.hv.cpu.usage.pct.min(10m)}&gt;{$CPU.PUSED.WARN})|({TRIGGER.VALUE}=1&amp;{TP-SW-OS-VMW-ESXi:vmware.hv.cpu.usage.pct.min(10m)}&gt;{$CPU.PUSED.NORM})</expression>
             <name>CPU usage was too high on {HOST.NAME}</name>
             <url/>
             <status>0</status>
@@ -916,7 +932,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{TP-SW-OS-VMW-ESXi:vmware.hv.memory.used.pct.avg(5m)}&gt;90</expression>
+            <expression>({TRIGGER.VALUE}=0&amp;{TP-SW-OS-VMW-ESXi:vmware.hv.memory.used.pct.min(10m)}&gt;{$MEM.PUSED.WARN})|({TRIGGER.VALUE}=1&amp;{TP-SW-OS-VMW-ESXi:vmware.hv.memory.used.pct.min(10m)}&gt;{$MEM.PUSED.NORM})</expression>
             <name>Memory usage was too high on {HOST.NAME}</name>
             <url/>
             <status>0</status>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-10-08T08:31:47Z</date>
+    <date>2014-09-29T13:36:00Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -9,8 +9,8 @@
     </groups>
     <templates>
         <template>
-            <template>TP-HW-SRV-VMW-ESXi</template>
-            <name>TP-HW-SRV-VMW-ESXi</name>
+            <template>TP-HW-SRV-IBM-SystemX</template>
+            <name>TP-HW-SRV-IBM-SystemX</name>
             <groups>
                 <group>
                     <name>Templates</name>
@@ -39,106 +39,11 @@
             <items/>
             <discovery_rules>
                 <discovery_rule>
-                    <name>Array Controller</name>
-                    <type>10</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;raid&quot;]</key>
-                    <delay>3600</delay>
-                    <status>0</status>
-                    <allowed_hosts/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <filter>:</filter>
-                    <lifetime>7</lifetime>
-                    <description/>
-                    <item_prototypes>
-                        <item_prototype>
-                            <name>Status of &quot;{#ENAME}&quot;</name>
-                            <type>10</type>
-                            <snmp_community/>
-                            <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;raid&quot;]</key>
-                            <delay>300</delay>
-                            <history>7</history>
-                            <trends>90</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description>Unknown(0)&#13;
-OK(5)&#13;
-Degraded/Warning(10)&#13;
-Minor failure(15)&#13;
-Major failure(20)&#13;
-Critical failure(25)&#13;
-Non-recoverable error(30)&#13;
-...&#13;
-DMTF Reserved(32768)&#13;
-Vendor Specific(65535)</description>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Disk</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                        </item_prototype>
-                    </item_prototypes>
-                    <trigger_prototypes>
-                        <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;raid&quot;].last(0)}#5</expression>
-                            <name>Status of &quot;{#ENAME}&quot; was abnormal on {HOST.NAME}</name>
-                            <url/>
-                            <status>0</status>
-                            <priority>3</priority>
-                            <description/>
-                            <type>0</type>
-                        </trigger_prototype>
-                    </trigger_prototypes>
-                    <graph_prototypes/>
-                    <host_prototypes/>
-                </discovery_rule>
-                <discovery_rule>
                     <name>CPU</name>
-                    <type>10</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;cpu&quot;]</key>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>.1.3.6.1.4.1.2.6.159.1.1.140.1.1.12</snmp_oid>
+                    <key>ibmSystemProcessorDeviceID</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -160,20 +65,20 @@ Vendor Specific(65535)</description>
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of &quot;{#ENAME}&quot;</name>
-                            <type>10</type>
-                            <snmp_community/>
+                            <name>Status of CPU &quot;$1&quot;</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;cpu&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.2.6.159.1.1.140.1.1.15.{#SNMPINDEX}</snmp_oid>
+                            <key>ibmSystemProcessorStatus[&quot;{#SNMPVALUE}&quot;]</key>
                             <delay>300</delay>
-                            <history>7</history>
-                            <trends>90</trends>
+                            <history>90</history>
+                            <trends>365</trends>
                             <status>0</status>
-                            <value_type>3</value_type>
+                            <value_type>4</value_type>
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
@@ -195,16 +100,7 @@ Vendor Specific(65535)</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Unknown(0)&#13;
-OK(5)&#13;
-Degraded/Warning(10)&#13;
-Minor failure(15)&#13;
-Major failure(20)&#13;
-Critical failure(25)&#13;
-Non-recoverable error(30)&#13;
-...&#13;
-DMTF Reserved(32768)&#13;
-Vendor Specific(65535)</description>
+                            <description/>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -216,8 +112,8 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;cpu&quot;].last(0)}#5</expression>
-                            <name>Status of &quot;{#ENAME}&quot; was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-SRV-IBM-SystemX:ibmSystemProcessorStatus[&quot;{#SNMPVALUE}&quot;].str(&quot;OK&quot;)}#1</expression>
+                            <name>Status of CPU &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -230,10 +126,10 @@ Vendor Specific(65535)</description>
                 </discovery_rule>
                 <discovery_rule>
                     <name>Fan</name>
-                    <type>10</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;fan&quot;]</key>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>.1.3.6.1.4.1.2.6.159.1.1.80.5.1.1</snmp_oid>
+                    <key>ibmSystemTachometerKeyIndex</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -255,20 +151,20 @@ Vendor Specific(65535)</description>
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of &quot;{#ENAME}&quot;</name>
-                            <type>10</type>
-                            <snmp_community/>
+                            <name>Status of Fan &quot;$1&quot;</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;fan&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.2.6.159.1.1.80.5.1.20.{#SNMPINDEX}</snmp_oid>
+                            <key>ibmSystemTachometerStatus[&quot;{#SNMPVALUE}&quot;]</key>
                             <delay>300</delay>
-                            <history>7</history>
-                            <trends>90</trends>
+                            <history>90</history>
+                            <trends>365</trends>
                             <status>0</status>
-                            <value_type>3</value_type>
+                            <value_type>4</value_type>
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
@@ -290,16 +186,7 @@ Vendor Specific(65535)</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Unknown(0)&#13;
-OK(5)&#13;
-Degraded/Warning(10)&#13;
-Minor failure(15)&#13;
-Major failure(20)&#13;
-Critical failure(25)&#13;
-Non-recoverable error(30)&#13;
-...&#13;
-DMTF Reserved(32768)&#13;
-Vendor Specific(65535)</description>
+                            <description/>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -311,8 +198,8 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;fan&quot;].last(0)}#5</expression>
-                            <name>Status of &quot;{#ENAME}&quot; was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-SRV-IBM-SystemX:ibmSystemTachometerStatus[&quot;{#SNMPVALUE}&quot;].str(&quot;OK&quot;)}#1</expression>
+                            <name>Status of Fan &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -325,10 +212,10 @@ Vendor Specific(65535)</description>
                 </discovery_rule>
                 <discovery_rule>
                     <name>Memory Module</name>
-                    <type>10</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;mem&quot;]</key>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>.1.3.6.1.4.1.2.6.159.1.1.120.1.1.12</snmp_oid>
+                    <key>ibmSystemPhysicalMemoryBankLabel</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -350,20 +237,20 @@ Vendor Specific(65535)</description>
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of &quot;{#ENAME}&quot;</name>
-                            <type>10</type>
-                            <snmp_community/>
+                            <name>Status of Memory Module &quot;$1&quot;</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;mem&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.2.6.159.1.1.120.1.1.17.{#SNMPINDEX}</snmp_oid>
+                            <key>ibmSystemPhysicalMemoryStatus[&quot;{#SNMPVALUE}&quot;]</key>
                             <delay>300</delay>
-                            <history>7</history>
-                            <trends>90</trends>
+                            <history>90</history>
+                            <trends>365</trends>
                             <status>0</status>
-                            <value_type>3</value_type>
+                            <value_type>4</value_type>
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
@@ -385,16 +272,7 @@ Vendor Specific(65535)</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Unknown(0)&#13;
-OK(5)&#13;
-Degraded/Warning(10)&#13;
-Minor failure(15)&#13;
-Major failure(20)&#13;
-Critical failure(25)&#13;
-Non-recoverable error(30)&#13;
-...&#13;
-DMTF Reserved(32768)&#13;
-Vendor Specific(65535)</description>
+                            <description/>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -406,8 +284,8 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;mem&quot;].last(0)}#5</expression>
-                            <name>Status of &quot;{#ENAME}&quot; was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-SRV-IBM-SystemX:ibmSystemPhysicalMemoryStatus[&quot;{#SNMPVALUE}&quot;].str(&quot;OK&quot;)}#1</expression>
+                            <name>Status of Memory Module &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -420,10 +298,10 @@ Vendor Specific(65535)</description>
                 </discovery_rule>
                 <discovery_rule>
                     <name>Physical Drive</name>
-                    <type>10</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;disk&quot;]</key>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>.1.3.6.1.4.1.2.6.159.3.4.1.4</snmp_oid>
+                    <key>ibmStorageDiskDriveElementName</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -445,15 +323,15 @@ Vendor Specific(65535)</description>
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of &quot;{#ENAME}&quot;</name>
-                            <type>10</type>
-                            <snmp_community/>
+                            <name>Status of Physical Drive &quot;$1&quot;</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;disk&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.2.6.159.3.4.1.6.{#SNMPINDEX}</snmp_oid>
+                            <key>ibmStorageDiskDriveOperationalStatus[&quot;{#SNMPVALUE}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -481,15 +359,24 @@ Vendor Specific(65535)</description>
                             <privatekey/>
                             <port/>
                             <description>Unknown(0)&#13;
-OK(5)&#13;
-Degraded/Warning(10)&#13;
-Minor failure(15)&#13;
-Major failure(20)&#13;
-Critical failure(25)&#13;
-Non-recoverable error(30)&#13;
-...&#13;
-DMTF Reserved(32768)&#13;
-Vendor Specific(65535)</description>
+Other(1)&#13;
+OK(2)&#13;
+Degraded(3)&#13;
+Stressed(4)&#13;
+Predictive Failure(5)&#13;
+Error(6)&#13;
+Non-Recoverable Error(7)&#13;
+Starting(8)&#13;
+Stopping(9)&#13;
+Stopped(10)&#13;
+In Service(11)&#13;
+No Contact(12)&#13;
+Lost Communication(13)&#13;
+|Aborted(14)&#13;
+Dormant(15)&#13;
+Supporting Entity in Error(16)&#13;
+Completed(17)&#13;
+Power Mode(18)</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -501,8 +388,8 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;disk&quot;].last(0)}#5</expression>
-                            <name>Status of &quot;{#ENAME}&quot; was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-SRV-IBM-SystemX:ibmStorageDiskDriveOperationalStatus[&quot;{#SNMPVALUE}&quot;].last(0)}#2</expression>
+                            <name>Status of Physical Drive &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -515,10 +402,10 @@ Vendor Specific(65535)</description>
                 </discovery_rule>
                 <discovery_rule>
                     <name>Power Supply</name>
-                    <type>10</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;ps&quot;]</key>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>.1.3.6.1.4.1.2.6.159.1.1.130.1.1.2</snmp_oid>
+                    <key>ibmSystemPowerSupplyDescription</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -540,20 +427,20 @@ Vendor Specific(65535)</description>
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of {#ENAME}</name>
-                            <type>10</type>
-                            <snmp_community/>
+                            <name>Status of Power Supply &quot;$1&quot;</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;ps&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.2.6.159.1.1.130.1.1.9.{#SNMPINDEX}</snmp_oid>
+                            <key>ibmSystemPowerSupplyStatus[&quot;{#SNMPVALUE}&quot;]</key>
                             <delay>300</delay>
-                            <history>7</history>
-                            <trends>90</trends>
+                            <history>90</history>
+                            <trends>365</trends>
                             <status>0</status>
-                            <value_type>3</value_type>
+                            <value_type>4</value_type>
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
@@ -575,16 +462,7 @@ Vendor Specific(65535)</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Unknown(0)&#13;
-OK(5)&#13;
-Degraded/Warning(10)&#13;
-Minor failure(15)&#13;
-Major failure(20)&#13;
-Critical failure(25)&#13;
-Non-recoverable error(30)&#13;
-...&#13;
-DMTF Reserved(32768)&#13;
-Vendor Specific(65535)</description>
+                            <description/>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -596,8 +474,8 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;ps&quot;].last(0)}#5</expression>
-                            <name>Status of &quot;{#ENAME}&quot; was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-SRV-IBM-SystemX:ibmSystemPowerSupplyStatus[&quot;{#SNMPVALUE}&quot;].str(&quot;OK&quot;)}#1</expression>
+                            <name>Status of Power Supply &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -610,10 +488,10 @@ Vendor Specific(65535)</description>
                 </discovery_rule>
                 <discovery_rule>
                     <name>Temperature Sensor</name>
-                    <type>10</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;temp&quot;]</key>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>.1.3.6.1.4.1.2.6.159.1.1.80.1.1.1</snmp_oid>
+                    <key>ibmSystemTemperatureSensorKeyIndex</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -635,15 +513,101 @@ Vendor Specific(65535)</description>
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of &quot;{#ENAME}&quot;</name>
-                            <type>10</type>
-                            <snmp_community/>
+                            <name>Status of Temperature Sensor &quot;$1&quot;</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;temp&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.2.6.159.1.1.80.1.1.21.{#SNMPINDEX}</snmp_oid>
+                            <key>ibmSystemTemperatureSensorStatus[&quot;{#SNMPVALUE}&quot;]</key>
+                            <delay>300</delay>
+                            <history>90</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>4</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Temperature</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{TP-HW-SRV-IBM-SystemX:ibmSystemTemperatureSensorStatus[&quot;{#SNMPVALUE}&quot;].str(&quot;OK&quot;)}#1</expression>
+                            <name>Status of Temperature Sensor &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Virtual Disk</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>.1.3.6.1.4.1.2.6.159.3.5.1.4</snmp_oid>
+                    <key>ibmStorageStorageVolumeElementName</key>
+                    <delay>3600</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>:</filter>
+                    <lifetime>7</lifetime>
+                    <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Status of Virtual Disk &quot;$1&quot;</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.2.6.159.3.5.1.9.{#SNMPINDEX}</snmp_oid>
+                            <key>ibmStorageStorageVolumeOperationalStatus[&quot;{#SNMPVALUE}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -671,19 +635,28 @@ Vendor Specific(65535)</description>
                             <privatekey/>
                             <port/>
                             <description>Unknown(0)&#13;
-OK(5)&#13;
-Degraded/Warning(10)&#13;
-Minor failure(15)&#13;
-Major failure(20)&#13;
-Critical failure(25)&#13;
-Non-recoverable error(30)&#13;
-...&#13;
-DMTF Reserved(32768)&#13;
-Vendor Specific(65535)</description>
+Other(1)&#13;
+OK(2)&#13;
+Degraded(3)&#13;
+Stressed(4)&#13;
+Predictive Failure(5)&#13;
+Error(6)&#13;
+Non-Recoverable Error(7)&#13;
+Starting(8)&#13;
+Stopping(9)&#13;
+Stopped(10)&#13;
+In Service(11)&#13;
+No Contact(12)&#13;
+Lost Communication(13)&#13;
+|Aborted(14)&#13;
+Dormant(15)&#13;
+Supporting Entity in Error(16)&#13;
+Completed(17)&#13;
+Power Mode(18)</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Temperature</name>
+                                    <name>Disk</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -691,8 +664,8 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;temp&quot;].last(0)}#5</expression>
-                            <name>Status of &quot;{#ENAME}&quot; was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-SRV-IBM-SystemX:ibmStorageStorageVolumeOperationalStatus[&quot;{#SNMPVALUE}&quot;].last(0)}#2</expression>
+                            <name>Status of Virtual Disk &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -706,16 +679,12 @@ Vendor Specific(65535)</description>
             </discovery_rules>
             <macros>
                 <macro>
-                    <macro>{$HOSTPWD}</macro>
-                    <value/>
-                </macro>
-                <macro>
-                    <macro>{$HOSTUSER}</macro>
+                    <macro>{$SNMP_COMMUNITY}</macro>
                     <value/>
                 </macro>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.2</value>
+                    <value>1.0.0</value>
                 </macro>
             </macros>
             <templates/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-10-08T07:46:56Z</date>
+    <date>2014-10-14T12:28:33Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -68,7 +68,7 @@
                     <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of Array Controller &quot;$1&quot;</name>
+                            <name>Status of array controller &quot;$1&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -118,7 +118,7 @@ failed(4)</description>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{TP-HW-SRV-HP-Proliant:cpqDaCntlrBoardCondition[&quot;{#SNMPVALUE}&quot;].last(0)}#2</expression>
-                            <name>Status of Array Controller &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>Status of array controller &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -255,7 +255,7 @@ absent(2)&#13;
 present(3)</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of Fan &quot;$1&quot;</name>
+                            <name>Status of fan &quot;$1&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -305,7 +305,7 @@ failed(4)</description>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{TP-HW-SRV-HP-Proliant:cpqHeFltTolFanCondition[&quot;{#SNMPINDEX}&quot;].last(0)}#2</expression>
-                            <name>Status of Fan &quot;{#SNMPINDEX}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>Status of fan &quot;{#SNMPINDEX}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -358,7 +358,7 @@ badConfig(10)&#13;
 degraded(11)</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of Memory Module &quot;$1&quot;</name>
+                            <name>Status of memory module &quot;$1&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -407,7 +407,7 @@ degraded(3)</description>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{TP-HW-SRV-HP-Proliant:cpqHeResMemModuleCondition[&quot;{#SNMPINDEX}&quot;].last(0)}#2</expression>
-                            <name>Status of Memory Module &quot;{#SNMPINDEX}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>Status of memory module &quot;{#SNMPINDEX}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -448,7 +448,7 @@ degraded(3)</description>
                     <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>S.M.A.R.T Status of Physical Drive &quot;$1&quot;</name>
+                            <name>S.M.A.R.T status of physical drive &quot;$1&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -493,7 +493,7 @@ replaceDriveSSDWearOut(4)</description>
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Status of Physical Drive &quot;$1&quot;</name>
+                            <name>Status of physical drive &quot;$1&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -543,7 +543,7 @@ failed(4)</description>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{TP-HW-SRV-HP-Proliant:cpqDaPhyDrvSmartStatus[&quot;{#SNMPVALUE}&quot;].last(0)}#2</expression>
-                            <name>S.M.A.R.T status of Physical Drive &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>S.M.A.R.T status of physical drive &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -552,7 +552,7 @@ failed(4)</description>
                         </trigger_prototype>
                         <trigger_prototype>
                             <expression>{TP-HW-SRV-HP-Proliant:cpqDaPhyDrvCondition[&quot;{#SNMPVALUE}&quot;].last(0)}#2</expression>
-                            <name>Status of Physical Drive &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>Status of physical drive &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -597,7 +597,7 @@ absent(2)&#13;
 present(3)</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of Power Supply &quot;$1&quot;</name>
+                            <name>Status of power supply &quot;$1&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -647,7 +647,7 @@ failed(4)</description>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{TP-HW-SRV-HP-Proliant:cpqHeFltTolPowerSupplyCondition[&quot;{#SNMPINDEX}&quot;].last(0)}#2</expression>
-                            <name>Status of Power Supply &quot;{#SNMPINDEX}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>Status of power supply &quot;{#SNMPINDEX}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -688,7 +688,7 @@ failed(4)</description>
                     <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of Temperature Sensor &quot;{#SNMPINDEX}&quot;</name>
+                            <name>Status of temperature sensor &quot;{#SNMPINDEX}&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -738,7 +738,7 @@ failed(4)</description>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{TP-HW-SRV-HP-Proliant:cpqHeTemperatureCondition[&quot;{#SNMPINDEX}&quot;].last(0)}#2</expression>
-                            <name>Status of Temperature Sensor &quot;{#SNMPINDEX}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>Status of temperature sensor &quot;{#SNMPINDEX}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>

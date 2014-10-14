@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-09-29T13:36:00Z</date>
+    <date>2014-10-14T12:32:42Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -154,7 +154,7 @@
                     <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of Fan &quot;$1&quot;</name>
+                            <name>Status of fan &quot;$1&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -199,7 +199,7 @@
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{TP-HW-SRV-IBM-SystemX:ibmSystemTachometerStatus[&quot;{#SNMPVALUE}&quot;].str(&quot;OK&quot;)}#1</expression>
-                            <name>Status of Fan &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>Status of fan &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -240,7 +240,7 @@
                     <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of Memory Module &quot;$1&quot;</name>
+                            <name>Status of memory module &quot;$1&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -285,7 +285,7 @@
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{TP-HW-SRV-IBM-SystemX:ibmSystemPhysicalMemoryStatus[&quot;{#SNMPVALUE}&quot;].str(&quot;OK&quot;)}#1</expression>
-                            <name>Status of Memory Module &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>Status of memory module &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -326,7 +326,7 @@
                     <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of Physical Drive &quot;$1&quot;</name>
+                            <name>Status of physical drive &quot;$1&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -389,7 +389,7 @@ Power Mode(18)</description>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{TP-HW-SRV-IBM-SystemX:ibmStorageDiskDriveOperationalStatus[&quot;{#SNMPVALUE}&quot;].last(0)}#2</expression>
-                            <name>Status of Physical Drive &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>Status of physical drive &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -430,7 +430,7 @@ Power Mode(18)</description>
                     <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of Power Supply &quot;$1&quot;</name>
+                            <name>Status of power supply &quot;$1&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -475,7 +475,7 @@ Power Mode(18)</description>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{TP-HW-SRV-IBM-SystemX:ibmSystemPowerSupplyStatus[&quot;{#SNMPVALUE}&quot;].str(&quot;OK&quot;)}#1</expression>
-                            <name>Status of Power Supply &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>Status of power supply &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -516,7 +516,7 @@ Power Mode(18)</description>
                     <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of Temperature Sensor &quot;$1&quot;</name>
+                            <name>Status of temperature sensor &quot;$1&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -561,7 +561,7 @@ Power Mode(18)</description>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{TP-HW-SRV-IBM-SystemX:ibmSystemTemperatureSensorStatus[&quot;{#SNMPVALUE}&quot;].str(&quot;OK&quot;)}#1</expression>
-                            <name>Status of Temperature Sensor &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>Status of temperature sensor &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -602,7 +602,7 @@ Power Mode(18)</description>
                     <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of Virtual Disk &quot;$1&quot;</name>
+                            <name>Status of virtual disk &quot;$1&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -665,7 +665,7 @@ Power Mode(18)</description>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{TP-HW-SRV-IBM-SystemX:ibmStorageStorageVolumeOperationalStatus[&quot;{#SNMPVALUE}&quot;].last(0)}#2</expression>
-                            <name>Status of Virtual Disk &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>Status of virtual disk &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-09-11T10:11:49Z</date>
+    <date>2014-10-14T12:51:34Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -41,12 +41,12 @@
             </applications>
             <items>
                 <item>
-                    <name>State of CPU module on SPA</name>
+                    <name>Status of &quot;SPA&quot;</name>
                     <type>10</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;cpua&quot;]</key>
+                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;spa&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -85,12 +85,12 @@
                     </valuemap>
                 </item>
                 <item>
-                    <name>State of CPU module on SPB</name>
+                    <name>Status of &quot;SPA CPU&quot; module</name>
                     <type>10</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;cpub&quot;]</key>
+                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;cpua&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -129,12 +129,12 @@
                     </valuemap>
                 </item>
                 <item>
-                    <name>State of DIMM module on SPA</name>
+                    <name>Status of &quot;SPA DIMM&quot; module</name>
                     <type>10</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;dimma&quot;]</key>
+                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;dimma&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -173,12 +173,12 @@
                     </valuemap>
                 </item>
                 <item>
-                    <name>State of DIMM module on SPB</name>
+                    <name>Status of &quot;SPB&quot;</name>
                     <type>10</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;dimmb&quot;]</key>
+                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;spb&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -217,12 +217,12 @@
                     </valuemap>
                 </item>
                 <item>
-                    <name>State of SPA</name>
+                    <name>Status of &quot;SPB CPU&quot; module</name>
                     <type>10</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;spa&quot;]</key>
+                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;cpub&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -261,12 +261,12 @@
                     </valuemap>
                 </item>
                 <item>
-                    <name>State of SPB</name>
+                    <name>Status of &quot;SPB DIMM&quot; module</name>
                     <type>10</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;spb&quot;]</key>
+                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;dimmb&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -305,12 +305,12 @@
                     </valuemap>
                 </item>
                 <item>
-                    <name>State of SPS A</name>
+                    <name>Status of &quot;SPS A&quot;</name>
                     <type>10</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;spsa&quot;]</key>
+                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;spsa&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -349,12 +349,12 @@
                     </valuemap>
                 </item>
                 <item>
-                    <name>State of SPS B</name>
+                    <name>Status of &quot;SPS A&quot; cabling</name>
                     <type>10</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;spsb&quot;]</key>
+                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;cablingspsa&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -393,12 +393,12 @@
                     </valuemap>
                 </item>
                 <item>
-                    <name>Status of cabling on SPS A</name>
+                    <name>Status of &quot;SPS B&quot;</name>
                     <type>10</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;cablingspsa&quot;]</key>
+                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;spsb&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -437,12 +437,12 @@
                     </valuemap>
                 </item>
                 <item>
-                    <name>Status of cabling on SPS B</name>
+                    <name>Status of &quot;SPS B&quot; cabling</name>
                     <type>10</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;cablingspsb&quot;]</key>
+                    <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;cablingspsb&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -487,7 +487,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>lld.emc.vnx[&quot;{HOST.IP}&quot;, &quot;disk&quot;]</key>
+                    <key>lld.emc.vnx[&quot;{HOST.IP}&quot;,&quot;disk&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -509,15 +509,15 @@
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#DISKNAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of disk $3</name>
+                            <name>Status of disk &quot;$3&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;disk&quot;, &quot;{#DISKNAME}&quot;]</key>
+                            <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;disk&quot;,&quot;{#DISKNAME}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -558,8 +558,8 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;disk&quot;, &quot;{#DISKNAME}&quot;].last()}#1</expression>
-                            <name>State of disk {#DISKNAME} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;disk&quot;,&quot;{#DISKNAME}&quot;].last(0)}#1</expression>
+                            <name>Status of disk &quot;{#DISKNAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -575,7 +575,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>lld.emc.vnx[&quot;{HOST.IP}&quot;, &quot;encpower&quot;]</key>
+                    <key>lld.emc.vnx[&quot;{HOST.IP}&quot;,&quot;encpower&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -597,15 +597,15 @@
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#POWERNAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of enclosure power $3</name>
+                            <name>Status of enclosure power &quot;$3&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;encpower&quot;, &quot;{#POWERNAME}&quot;]</key>
+                            <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;encpower&quot;,&quot;{#POWERNAME}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -646,8 +646,8 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;encpower&quot;, &quot;{#POWERNAME}&quot;].last(0)}#1</expression>
-                            <name>State of enclosure power {#POWERNAME} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;encpower&quot;,&quot;{#POWERNAME}&quot;].last(0)}#1</expression>
+                            <name>Status of enclosure power &quot;{#POWERNAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -663,7 +663,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>lld.emc.vnx[&quot;{HOST.IP}&quot;, &quot;fan&quot;]</key>
+                    <key>lld.emc.vnx[&quot;{HOST.IP}&quot;,&quot;fan&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -685,15 +685,15 @@
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#FANNAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of fan $3</name>
+                            <name>Status of fan &quot;$3&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;fan&quot;, &quot;{#FANNAME}&quot;]</key>
+                            <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;fan&quot;,&quot;{#FANNAME}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -734,8 +734,8 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;fan&quot;, &quot;{#FANNAME}&quot;].last(0)}#1</expression>
-                            <name>Status of fan {#FANNAME} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;fan&quot;,&quot;{#FANNAME}&quot;].last(0)}#1</expression>
+                            <name>Status of fan &quot;{#FANNAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -751,7 +751,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>lld.emc.vnx[&quot;{HOST.IP}&quot;, &quot;io&quot;]</key>
+                    <key>lld.emc.vnx[&quot;{HOST.IP}&quot;,&quot;io&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -773,15 +773,15 @@
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#IONAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of I/O module $3</name>
+                            <name>Status of I/O module &quot;$3&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;io&quot;, &quot;{#IONAME}&quot;]</key>
+                            <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;io&quot;,&quot;{#IONAME}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -822,8 +822,8 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;io&quot;, &quot;{#IONAME}&quot;].last(0)}#1</expression>
-                            <name>Status of I/O module {#IONAME} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;io&quot;,&quot;{#IONAME}&quot;].last(0)}#1</expression>
+                            <name>Status of I/O module &quot;{#IONAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -839,7 +839,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>lld.emc.vnx[&quot;{HOST.IP}&quot;, &quot;lcc&quot;]</key>
+                    <key>lld.emc.vnx[&quot;{HOST.IP}&quot;,&quot;lcc&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -861,15 +861,15 @@
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#LCCNAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of LCC $3</name>
+                            <name>Status of LCC &quot;$3&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;lcc&quot;, &quot;{#LCCNAME}&quot;]</key>
+                            <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;lcc&quot;,&quot;{#LCCNAME}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -910,8 +910,8 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;lcc&quot;, &quot;{#LCCNAME}&quot;].last(0)}#1</expression>
-                            <name>Status of LCC {#LCCNAME} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;lcc&quot;,&quot;{#LCCNAME}&quot;].last(0)}#1</expression>
+                            <name>Status of LCC &quot;{#LCCNAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -927,7 +927,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>lld.emc.vnx[&quot;{HOST.IP}&quot;, &quot;spepower&quot;]</key>
+                    <key>lld.emc.vnx[&quot;{HOST.IP}&quot;,&quot;spepower&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -949,15 +949,15 @@
                     <port/>
                     <filter>:</filter>
                     <lifetime>7</lifetime>
-                    <description/>
+                    <description>Using {#POWERNAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of SPE power $3</name>
+                            <name>Status of SPE power &quot;$3&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;spepower&quot;, &quot;{#POWERNAME}&quot;]</key>
+                            <key>chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;spepower&quot;,&quot;{#POWERNAME}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -998,8 +998,8 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;spepower&quot;, &quot;{#POWERNAME}&quot;].last(0)}#1</expression>
-                            <name>State of SPE power {#POWERNAME} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;spepower&quot;,&quot;{#POWERNAME}&quot;].last(0)}#1</expression>
+                            <name>Status of SPE power &quot;{#POWERNAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -1014,7 +1014,7 @@
             <macros>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.1</value>
+                    <value>1.0.2</value>
                 </macro>
             </macros>
             <templates/>
@@ -1023,8 +1023,8 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;cpua&quot;].last(0)}#1</expression>
-            <name>State of SPA CPU module was abnormal on {HOST.NAME}</name>
+            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;spa&quot;].last(0)}#1</expression>
+            <name>Status of &quot;SPA&quot; was abnormal on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -1033,8 +1033,8 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;dimma&quot;].last(0)}#1</expression>
-            <name>State of SPA DIMM module was abnormal on {HOST.NAME}</name>
+            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;cpua&quot;].last(0)}#1</expression>
+            <name>Status of &quot;SPA CPU&quot; module was abnormal on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -1043,8 +1043,8 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;spa&quot;].last(0)}#1</expression>
-            <name>State of SPA was abnormal on {HOST.NAME}</name>
+            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;dimma&quot;].last(0)}#1</expression>
+            <name>Status of &quot;SPA DIMM&quot; module was abnormal on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -1053,8 +1053,8 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;cpub&quot;].last(0)}#1</expression>
-            <name>State of SPB CPU module was abnormal on {HOST.NAME}</name>
+            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;spb&quot;].last(0)}#1</expression>
+            <name>Status of &quot;SPB&quot; was abnormal on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -1063,8 +1063,8 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;dimmb&quot;].last(0)}#1</expression>
-            <name>State of SPB DIMM module was abnormal on {HOST.NAME}</name>
+            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;cpub&quot;].last(0)}#1</expression>
+            <name>Status of &quot;SPB CPU&quot; module was abnormal on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -1073,8 +1073,8 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;spb&quot;].last(0)}#1</expression>
-            <name>State of SPB was abnormal on {HOST.NAME}</name>
+            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;dimmb&quot;].last(0)}#1</expression>
+            <name>Status of &quot;SPB DIMM&quot; module was abnormal on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -1083,8 +1083,8 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;spsa&quot;].last(0)}#1</expression>
-            <name>State of SPS A was abnormal on {HOST.NAME}</name>
+            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;cablingspsa&quot;].last(0)}#1</expression>
+            <name>Status of &quot;SPS A&quot; cabling was abnormal on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -1093,8 +1093,8 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;spsb&quot;].last(0)}#1</expression>
-            <name>State of SPS B was abnormal on {HOST.NAME}</name>
+            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;spsa&quot;].last(0)}#1</expression>
+            <name>Status of &quot;SPS A&quot; was abnormal on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -1103,8 +1103,8 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;cablingspsa&quot;].last(0)}#1</expression>
-            <name>Status of SPS A cabling was abnormal on {HOST.NAME}</name>
+            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;cablingspsb&quot;].last(0)}#1</expression>
+            <name>Status of &quot;SPS B&quot; Cabling was abnormal on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -1113,8 +1113,8 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;, &quot;cablingspsb&quot;].last(0)}#1</expression>
-            <name>Status of SPS B cabling was abnormal on {HOST.NAME}</name>
+            <expression>{TP-HW-STG-EMC-VNX:chk.emc.vnx[&quot;{HOST.IP}&quot;,&quot;spsb&quot;].last(0)}#1</expression>
+            <name>Status of &quot;SPS B&quot; was abnormal on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>3</priority>

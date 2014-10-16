@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-10-08T08:31:47Z</date>
+    <date>2014-10-16T10:01:32Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -43,7 +43,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;raid&quot;]</key>
+                    <key>lld.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;raid&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -73,7 +73,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;raid&quot;]</key>
+                            <key>chk.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;raid&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -121,7 +121,7 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;raid&quot;].last(0)}#5</expression>
+                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;raid&quot;].last(0)}#5</expression>
                             <name>Status of &quot;{#ENAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -138,7 +138,7 @@ Vendor Specific(65535)</description>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;cpu&quot;]</key>
+                    <key>lld.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;cpu&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -168,7 +168,7 @@ Vendor Specific(65535)</description>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;cpu&quot;]</key>
+                            <key>chk.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;cpu&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -216,7 +216,7 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;cpu&quot;].last(0)}#5</expression>
+                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;cpu&quot;].last(0)}#5</expression>
                             <name>Status of &quot;{#ENAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -233,7 +233,7 @@ Vendor Specific(65535)</description>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;fan&quot;]</key>
+                    <key>lld.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;fan&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -263,7 +263,7 @@ Vendor Specific(65535)</description>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;fan&quot;]</key>
+                            <key>chk.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;fan&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -311,7 +311,7 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;fan&quot;].last(0)}#5</expression>
+                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;fan&quot;].last(0)}#5</expression>
                             <name>Status of &quot;{#ENAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -328,7 +328,7 @@ Vendor Specific(65535)</description>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;mem&quot;]</key>
+                    <key>lld.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;mem&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -358,7 +358,7 @@ Vendor Specific(65535)</description>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;mem&quot;]</key>
+                            <key>chk.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;mem&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -406,7 +406,7 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;mem&quot;].last(0)}#5</expression>
+                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;mem&quot;].last(0)}#5</expression>
                             <name>Status of &quot;{#ENAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -423,7 +423,7 @@ Vendor Specific(65535)</description>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;disk&quot;]</key>
+                    <key>lld.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;disk&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -453,7 +453,7 @@ Vendor Specific(65535)</description>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;disk&quot;]</key>
+                            <key>chk.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;disk&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -501,7 +501,7 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;disk&quot;].last(0)}#5</expression>
+                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;disk&quot;].last(0)}#5</expression>
                             <name>Status of &quot;{#ENAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -518,7 +518,7 @@ Vendor Specific(65535)</description>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;ps&quot;]</key>
+                    <key>lld.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;ps&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -548,7 +548,7 @@ Vendor Specific(65535)</description>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;ps&quot;]</key>
+                            <key>chk.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;ps&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -596,7 +596,7 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;ps&quot;].last(0)}#5</expression>
+                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;ps&quot;].last(0)}#5</expression>
                             <name>Status of &quot;{#ENAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -613,7 +613,7 @@ Vendor Specific(65535)</description>
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>chk.vmw.hw[&quot;-d&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;temp&quot;]</key>
+                    <key>lld.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;temp&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -643,7 +643,7 @@ Vendor Specific(65535)</description>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;temp&quot;]</key>
+                            <key>chk.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;temp&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -691,7 +691,7 @@ Vendor Specific(65535)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.hw[&quot;-g&quot;,&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;temp&quot;].last(0)}#5</expression>
+                            <expression>{TP-HW-SRV-VMW-ESXi:chk.vmw.esxi[&quot;{HOST.IP}&quot;,&quot;{$HOSTUSER}&quot;,&quot;{$HOSTPWD}&quot;,&quot;{#CNAME}&quot;,&quot;{#ENAME}&quot;,&quot;{#DEVID}&quot;,&quot;temp&quot;].last(0)}#5</expression>
                             <name>Status of &quot;{#ENAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>

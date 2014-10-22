@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-10-15T01:28:57Z</date>
+    <date>2014-10-22T12:04:30Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -49,7 +49,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ausers&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ausers&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -91,7 +91,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;bufbusywaits&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;bufbusywaits&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -133,7 +133,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;users&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;users&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -175,7 +175,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbprllwrite&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbprllwrite&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -217,7 +217,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbscatread&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbscatread&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -259,7 +259,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbseqtread&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbseqtread&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -301,7 +301,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbsnglwrite&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbsnglwrite&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -343,7 +343,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;deadlocks&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;deadlocks&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -385,7 +385,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;directread&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;directread&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -427,7 +427,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;directwrite&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;directwrite&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -469,7 +469,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;pdisksort&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;pdisksort&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -511,7 +511,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;freebufwaits&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;freebufwaits&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -553,7 +553,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dfree&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dfree&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -595,7 +595,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dfreepct&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dfreepct&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -613,7 +613,7 @@
                     <snmpv3_privpassphrase/>
                     <formula>1</formula>
                     <delay_flex/>
-                    <params>last(&quot;chk.oracle.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dfree\&quot;]&quot;)/last(&quot;chk.oracle.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dtotal\&quot;]&quot;)*100</params>
+                    <params>last(&quot;chk.orcl.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dfree\&quot;]&quot;)/last(&quot;chk.orcl.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dtotal\&quot;]&quot;)*100</params>
                     <ipmi_sensor/>
                     <data_type>0</data_type>
                     <authtype>0</authtype>
@@ -637,7 +637,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tfree&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tfree&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -679,7 +679,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tfreepct&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tfreepct&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -697,7 +697,7 @@
                     <snmpv3_privpassphrase/>
                     <formula>1</formula>
                     <delay_flex/>
-                    <params>last(&quot;chk.oracle.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;tfree\&quot;]&quot;)/last(&quot;chk.oracle.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;ttotal\&quot;]&quot;)*100</params>
+                    <params>last(&quot;chk.orcl.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;tfree\&quot;]&quot;)/last(&quot;chk.orcl.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;ttotal\&quot;]&quot;)*100</params>
                     <ipmi_sensor/>
                     <data_type>0</data_type>
                     <authtype>0</authtype>
@@ -721,7 +721,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;phardparse&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;phardparse&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -763,7 +763,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;indexffs&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;indexffs&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -805,7 +805,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;latchfree&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;latchfree&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -847,7 +847,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;logprllwrite&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;logprllwrite&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -889,7 +889,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;logswcompletion&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;logswcompletion&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -931,7 +931,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;logfilesync&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;logfilesync&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -973,7 +973,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;redowrites&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;redowrites&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -1015,7 +1015,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;status&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;status&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -1059,7 +1059,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tabrowsscan&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tabrowsscan&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -1101,7 +1101,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tablongscan&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tablongscan&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -1143,7 +1143,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtotal&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtotal&quot;]</key>
                     <delay>3600</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -1185,7 +1185,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttotal&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttotal&quot;]</key>
                     <delay>3600</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -1227,7 +1227,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;commits&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;commits&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -1269,7 +1269,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;rollbacks&quot;]</key>
+                    <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;rollbacks&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -1312,7 +1312,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>lld.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dk&quot;]</key>
+                    <key>lld.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dk&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -1342,7 +1342,7 @@
                             <snmp_community/>
                             <multiplier>1</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dkfree&quot;,&quot;{#INDEX}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dkfree&quot;,&quot;{#INDEX}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -1384,7 +1384,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dkfreepct&quot;,&quot;{#INDEX}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dkfreepct&quot;,&quot;{#INDEX}&quot;]</key>
                             <delay>30</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -1402,7 +1402,7 @@
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
-                            <params>last(&quot;chk.oracle.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dkfree\&quot;,\&quot;{#INDEX}\&quot;]&quot;)/last(&quot;chk.oracle.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dktotal\&quot;,\&quot;{#INDEX}\&quot;]&quot;)*100</params>
+                            <params>last(&quot;chk.orcl.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dkfree\&quot;,\&quot;{#INDEX}\&quot;]&quot;)/last(&quot;chk.orcl.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dktotal\&quot;,\&quot;{#INDEX}\&quot;]&quot;)*100</params>
                             <ipmi_sensor/>
                             <data_type>0</data_type>
                             <authtype>0</authtype>
@@ -1426,7 +1426,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dkstatus&quot;,&quot;{#INDEX}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dkstatus&quot;,&quot;{#INDEX}&quot;]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1468,7 +1468,7 @@
                             <snmp_community/>
                             <multiplier>1</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dktotal&quot;,&quot;{#INDEX}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dktotal&quot;,&quot;{#INDEX}&quot;]</key>
                             <delay>3600</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -1507,7 +1507,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dkstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;OPENED&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dkstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;CACHED&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dkstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;ZBX_NOTSUPPORTED&quot;)}#1</expression>
+                            <expression>{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dkstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;OPENED&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dkstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;CACHED&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dkstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;ZBX_NOTSUPPORTED&quot;)}#1</expression>
                             <name>Status of asm disk &quot;{#NAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -1524,7 +1524,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>lld.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dg&quot;]</key>
+                    <key>lld.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dg&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -1554,7 +1554,7 @@
                             <snmp_community/>
                             <multiplier>1</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgfree&quot;,&quot;{#NAME}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgfree&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -1596,7 +1596,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgfreepct&quot;,&quot;{#NAME}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgfreepct&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -1614,7 +1614,7 @@
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
-                            <params>last(&quot;chk.oracle.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dgfree\&quot;,\&quot;{#NAME}\&quot;]&quot;)/last(&quot;chk.oracle.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dgtotal\&quot;,\&quot;{#NAME}\&quot;]&quot;)*100</params>
+                            <params>last(&quot;chk.orcl.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dgfree\&quot;,\&quot;{#NAME}\&quot;]&quot;)/last(&quot;chk.orcl.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dgtotal\&quot;,\&quot;{#NAME}\&quot;]&quot;)*100</params>
                             <ipmi_sensor/>
                             <data_type>0</data_type>
                             <authtype>0</authtype>
@@ -1638,7 +1638,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgstatus&quot;,&quot;{#NAME}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgstatus&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1680,7 +1680,7 @@
                             <snmp_community/>
                             <multiplier>1</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgtotal&quot;,&quot;{#NAME}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgtotal&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>3600</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -1719,7 +1719,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgstatus&quot;,&quot;{#NAME}&quot;].str(&quot;CONNECTED&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgstatus&quot;,&quot;{#NAME}&quot;].str(&quot;MOUNTED&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgstatus&quot;,&quot;{#NAME}&quot;].str(&quot;ZBX_NOTSUPPORTED&quot;)}#1</expression>
+                            <expression>{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgstatus&quot;,&quot;{#NAME}&quot;].str(&quot;CONNECTED&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgstatus&quot;,&quot;{#NAME}&quot;].str(&quot;MOUNTED&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgstatus&quot;,&quot;{#NAME}&quot;].str(&quot;ZBX_NOTSUPPORTED&quot;)}#1</expression>
                             <name>Status of asm diskgroup &quot;{#NAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -1728,7 +1728,7 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>({TRIGGER.VALUE}=0&amp;{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgfreepct&quot;,&quot;{#NAME}&quot;].max(10m)}&lt;{$DG.PFREE.WARN})|({TRIGGER.VALUE}=1&amp;{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgfreepct&quot;,&quot;{#NAME}&quot;].max(10m)}&lt;{$DG.PFREE.NORM})</expression>
+                            <expression>({TRIGGER.VALUE}=0&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgfreepct&quot;,&quot;{#NAME}&quot;].max(10m)}&lt;{$DG.PFREE.WARN})|({TRIGGER.VALUE}=1&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgfreepct&quot;,&quot;{#NAME}&quot;].max(10m)}&lt;{$DG.PFREE.NORM})</expression>
                             <name>Used space of asm diskgroup &quot;{#NAME}&quot; was too high on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -1745,7 +1745,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>lld.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;df&quot;]</key>
+                    <key>lld.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;df&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -1775,7 +1775,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dfstatus&quot;,&quot;{#INDEX}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dfstatus&quot;,&quot;{#INDEX}&quot;]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1814,7 +1814,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dfstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;SYSTEM&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dfstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;ONLINE&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dfstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;ZBX_NOTSUPPORTED&quot;)}#1</expression>
+                            <expression>{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dfstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;SYSTEM&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dfstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;ONLINE&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dfstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;ZBX_NOTSUPPORTED&quot;)}#1</expression>
                             <name>Status of data file &quot;{#NAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -1831,7 +1831,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>lld.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dts&quot;]</key>
+                    <key>lld.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dts&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -1861,7 +1861,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsfree&quot;,&quot;{#NAME}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsfree&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -1903,7 +1903,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsfreepct&quot;,&quot;{#NAME}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsfreepct&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -1921,7 +1921,7 @@
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
-                            <params>last(&quot;chk.oracle.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dtsfree\&quot;,\&quot;{#NAME}\&quot;]&quot;)/last(&quot;chk.oracle.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dtstotal\&quot;,\&quot;{#NAME}\&quot;]&quot;)*100</params>
+                            <params>last(&quot;chk.orcl.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dtsfree\&quot;,\&quot;{#NAME}\&quot;]&quot;)/last(&quot;chk.orcl.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;dtstotal\&quot;,\&quot;{#NAME}\&quot;]&quot;)*100</params>
                             <ipmi_sensor/>
                             <data_type>0</data_type>
                             <authtype>0</authtype>
@@ -1945,7 +1945,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsstatus&quot;,&quot;{#NAME}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsstatus&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -1987,7 +1987,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtstotal&quot;,&quot;{#NAME}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtstotal&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>3600</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -2026,7 +2026,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsstatus&quot;,&quot;{#NAME}&quot;].str(&quot;ONLINE&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsstatus&quot;,&quot;{#NAME}&quot;].str(&quot;ZBX_NOTSUPPORTED&quot;)}#1</expression>
+                            <expression>{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsstatus&quot;,&quot;{#NAME}&quot;].str(&quot;ONLINE&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsstatus&quot;,&quot;{#NAME}&quot;].str(&quot;ZBX_NOTSUPPORTED&quot;)}#1</expression>
                             <name>Status of tablespace &quot;{#NAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -2035,7 +2035,7 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>({TRIGGER.VALUE}=0&amp;{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsfreepct&quot;,&quot;{#NAME}&quot;].max(10m)}&lt;{$TS.PFREE.WARN})|({TRIGGER.VALUE}=1&amp;{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsfreepct&quot;,&quot;{#NAME}&quot;].max(10m)}&lt;{$TS.PFREE.NORM})</expression>
+                            <expression>({TRIGGER.VALUE}=0&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsfreepct&quot;,&quot;{#NAME}&quot;].max(10m)}&lt;{$TS.PFREE.WARN})|({TRIGGER.VALUE}=1&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsfreepct&quot;,&quot;{#NAME}&quot;].max(10m)}&lt;{$TS.PFREE.NORM})</expression>
                             <name>Used space of tablespace &quot;{#NAME}&quot; was too high on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -2056,7 +2056,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>lld.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tf&quot;]</key>
+                    <key>lld.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tf&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -2086,7 +2086,7 @@ select tablespace_name, file_name, autoextensible&#13;
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tfstatus&quot;,&quot;{#INDEX}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tfstatus&quot;,&quot;{#INDEX}&quot;]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -2125,7 +2125,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tfstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;ONLINE&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tfstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;ZBX_NOTSUPPORTED&quot;)}#1</expression>
+                            <expression>{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tfstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;ONLINE&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tfstatus&quot;,&quot;{#INDEX}&quot;].str(&quot;ZBX_NOTSUPPORTED&quot;)}#1</expression>
                             <name>Status of temp file &quot;{#NAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -2142,7 +2142,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>lld.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tts&quot;]</key>
+                    <key>lld.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tts&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -2172,7 +2172,7 @@ select tablespace_name, file_name, autoextensible&#13;
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttsfree&quot;,&quot;{#NAME}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttsfree&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -2214,7 +2214,7 @@ select tablespace_name, file_name, autoextensible&#13;
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttsfreepct&quot;,&quot;{#NAME}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttsfreepct&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -2232,7 +2232,7 @@ select tablespace_name, file_name, autoextensible&#13;
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
-                            <params>last(&quot;chk.oracle.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;ttsfree\&quot;,\&quot;{#NAME}\&quot;]&quot;)/last(&quot;chk.oracle.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;ttstotal\&quot;,\&quot;{#NAME}\&quot;]&quot;)*100</params>
+                            <params>last(&quot;chk.orcl.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;ttsfree\&quot;,\&quot;{#NAME}\&quot;]&quot;)/last(&quot;chk.orcl.db[\&quot;{HOST.IP}\&quot;,\&quot;{$PORT}\&quot;,\&quot;{$SID}\&quot;,\&quot;ttstotal\&quot;,\&quot;{#NAME}\&quot;]&quot;)*100</params>
                             <ipmi_sensor/>
                             <data_type>0</data_type>
                             <authtype>0</authtype>
@@ -2256,7 +2256,7 @@ select tablespace_name, file_name, autoextensible&#13;
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttsstatus&quot;,&quot;{#NAME}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttsstatus&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
@@ -2298,7 +2298,7 @@ select tablespace_name, file_name, autoextensible&#13;
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttstotal&quot;,&quot;{#NAME}&quot;]</key>
+                            <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttstotal&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>3600</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -2337,7 +2337,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttsstatus&quot;,&quot;{#NAME}&quot;].str(&quot;ONLINE&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttsstatus&quot;,&quot;{#NAME}&quot;].str(&quot;ZBX_NOTSUPPORTED&quot;)}#1</expression>
+                            <expression>{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttsstatus&quot;,&quot;{#NAME}&quot;].str(&quot;ONLINE&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttsstatus&quot;,&quot;{#NAME}&quot;].str(&quot;ZBX_NOTSUPPORTED&quot;)}#1</expression>
                             <name>Status of tablespace &quot;{#NAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -2377,7 +2377,7 @@ select tablespace_name, file_name, autoextensible&#13;
                 </macro>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.0</value>
+                    <value>1.0.1</value>
                 </macro>
             </macros>
             <templates/>
@@ -2386,7 +2386,7 @@ select tablespace_name, file_name, autoextensible&#13;
     </templates>
     <triggers>
         <trigger>
-            <expression>{TP-SW-DB-ORCL-Database:chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;status&quot;].last(0)}#1</expression>
+            <expression>{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;status&quot;].last(0)}#1</expression>
             <name>Status of instance &quot;{$SID}&quot; was abnormal on {HOST.NAME}</name>
             <url/>
             <status>0</status>
@@ -2424,7 +2424,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <type>0</type>
                     <item>
                         <host>TP-SW-DB-ORCL-Database</host>
-                        <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;bufbusywaits&quot;]</key>
+                        <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;bufbusywaits&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2436,7 +2436,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <type>0</type>
                     <item>
                         <host>TP-SW-DB-ORCL-Database</host>
-                        <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbprllwrite&quot;]</key>
+                        <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbprllwrite&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2448,7 +2448,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <type>0</type>
                     <item>
                         <host>TP-SW-DB-ORCL-Database</host>
-                        <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbscatread&quot;]</key>
+                        <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbscatread&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2460,7 +2460,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <type>0</type>
                     <item>
                         <host>TP-SW-DB-ORCL-Database</host>
-                        <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbseqtread&quot;]</key>
+                        <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbseqtread&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2472,7 +2472,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <type>0</type>
                     <item>
                         <host>TP-SW-DB-ORCL-Database</host>
-                        <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbsnglwrite&quot;]</key>
+                        <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dbsnglwrite&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2484,7 +2484,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <type>0</type>
                     <item>
                         <host>TP-SW-DB-ORCL-Database</host>
-                        <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;directread&quot;]</key>
+                        <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;directread&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2496,7 +2496,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <type>0</type>
                     <item>
                         <host>TP-SW-DB-ORCL-Database</host>
-                        <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;directwrite&quot;]</key>
+                        <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;directwrite&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2508,7 +2508,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <type>0</type>
                     <item>
                         <host>TP-SW-DB-ORCL-Database</host>
-                        <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;freebufwaits&quot;]</key>
+                        <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;freebufwaits&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2520,7 +2520,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <type>0</type>
                     <item>
                         <host>TP-SW-DB-ORCL-Database</host>
-                        <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;latchfree&quot;]</key>
+                        <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;latchfree&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2532,7 +2532,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <type>0</type>
                     <item>
                         <host>TP-SW-DB-ORCL-Database</host>
-                        <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;logprllwrite&quot;]</key>
+                        <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;logprllwrite&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2544,7 +2544,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <type>0</type>
                     <item>
                         <host>TP-SW-DB-ORCL-Database</host>
-                        <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;logswcompletion&quot;]</key>
+                        <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;logswcompletion&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -2556,7 +2556,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <type>0</type>
                     <item>
                         <host>TP-SW-DB-ORCL-Database</host>
-                        <key>chk.oracle.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;logfilesync&quot;]</key>
+                        <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;logfilesync&quot;]</key>
                     </item>
                 </graph_item>
             </graph_items>

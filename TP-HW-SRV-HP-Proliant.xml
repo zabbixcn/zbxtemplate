@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-10-14T12:28:33Z</date>
+    <date>2014-10-28T06:39:34Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -68,12 +68,12 @@
                     <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of array controller &quot;$1&quot;</name>
+                            <name>Status of array controller &quot;{#SNMPVALUE}&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.232.3.2.2.1.1.12.{#SNMPINDEX}</snmp_oid>
-                            <key>cpqDaCntlrBoardCondition[&quot;{#SNMPVALUE}&quot;]</key>
+                            <key>cpqDaCntlrBoardCondition[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -117,7 +117,7 @@ failed(4)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-HP-Proliant:cpqDaCntlrBoardCondition[&quot;{#SNMPVALUE}&quot;].last(0)}#2</expression>
+                            <expression>{TP-HW-SRV-HP-Proliant:cpqDaCntlrBoardCondition[&quot;{#SNMPINDEX}&quot;].last(0)}#2</expression>
                             <name>Status of array controller &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -159,12 +159,12 @@ failed(4)</description>
                     <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of CPU &quot;$1&quot;</name>
+                            <name>Status of CPU &quot;{#SNMPVALUE}&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.232.1.2.2.1.1.6.{#SNMPINDEX}</snmp_oid>
-                            <key>cpqSeCpuStatus[&quot;{#SNMPVALUE}&quot;]</key>
+                            <key>cpqSeCpuStatus[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -209,7 +209,7 @@ disabled(5)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-HP-Proliant:cpqSeCpuStatus[&quot;{#SNMPVALUE}&quot;].last(0)}#2</expression>
+                            <expression>{TP-HW-SRV-HP-Proliant:cpqSeCpuStatus[&quot;{#SNMPINDEX}&quot;].last(0)}#2</expression>
                             <name>Status of CPU &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -255,7 +255,7 @@ absent(2)&#13;
 present(3)</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of fan &quot;$1&quot;</name>
+                            <name>Status of fan &quot;{#SNMPINDEX}&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -358,7 +358,7 @@ badConfig(10)&#13;
 degraded(11)</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of memory module &quot;$1&quot;</name>
+                            <name>Status of memory module &quot;{#SNMPINDEX}&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -448,12 +448,12 @@ degraded(3)</description>
                     <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>S.M.A.R.T status of physical drive &quot;$1&quot;</name>
+                            <name>S.M.A.R.T status of physical drive &quot;{#SNMPVALUE}&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.232.3.2.5.1.1.57.{#SNMPINDEX}</snmp_oid>
-                            <key>cpqDaPhyDrvSmartStatus[&quot;{#SNMPVALUE}&quot;]</key>
+                            <key>cpqDaPhyDrvSmartStatus[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -493,12 +493,12 @@ replaceDriveSSDWearOut(4)</description>
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Status of physical drive &quot;$1&quot;</name>
+                            <name>Status of physical drive &quot;{#SNMPVALUE}&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>.1.3.6.1.4.1.232.3.2.5.1.1.37.{#SNMPINDEX}</snmp_oid>
-                            <key>cpqDaPhyDrvCondition[&quot;{#SNMPVALUE}&quot;]</key>
+                            <key>cpqDaPhyDrvCondition[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -542,7 +542,7 @@ failed(4)</description>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-HP-Proliant:cpqDaPhyDrvSmartStatus[&quot;{#SNMPVALUE}&quot;].last(0)}#2</expression>
+                            <expression>{TP-HW-SRV-HP-Proliant:cpqDaPhyDrvSmartStatus[&quot;{#SNMPINDEX}&quot;].last(0)}#2</expression>
                             <name>S.M.A.R.T status of physical drive &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -551,7 +551,7 @@ failed(4)</description>
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-HP-Proliant:cpqDaPhyDrvCondition[&quot;{#SNMPVALUE}&quot;].last(0)}#2</expression>
+                            <expression>{TP-HW-SRV-HP-Proliant:cpqDaPhyDrvCondition[&quot;{#SNMPINDEX}&quot;].last(0)}#2</expression>
                             <name>Status of physical drive &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -597,7 +597,7 @@ absent(2)&#13;
 present(3)</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of power supply &quot;$1&quot;</name>
+                            <name>Status of power supply &quot;{#SNMPINDEX}&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -757,7 +757,7 @@ failed(4)</description>
                 </macro>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.1</value>
+                    <value>1.0.2</value>
                 </macro>
             </macros>
             <templates/>

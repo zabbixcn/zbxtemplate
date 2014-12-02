@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-10-14T12:51:34Z</date>
+    <date>2014-10-28T07:04:15Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -512,7 +512,7 @@
                     <description>Using {#DISKNAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of disk &quot;$3&quot;</name>
+                            <name>Status of disk &quot;{#DISKNAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -600,7 +600,7 @@
                     <description>Using {#POWERNAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of enclosure power &quot;$3&quot;</name>
+                            <name>Status of enclosure power &quot;{#POWERNAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -688,7 +688,7 @@
                     <description>Using {#FANNAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of fan &quot;$3&quot;</name>
+                            <name>Status of fan &quot;{#FANNAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -776,7 +776,7 @@
                     <description>Using {#IONAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of I/O module &quot;$3&quot;</name>
+                            <name>Status of I/O module &quot;{#IONAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -864,7 +864,7 @@
                     <description>Using {#LCCNAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of LCC &quot;$3&quot;</name>
+                            <name>Status of LCC &quot;{#LCCNAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -952,7 +952,7 @@
                     <description>Using {#POWERNAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of SPE power &quot;$3&quot;</name>
+                            <name>Status of SPE power &quot;{#POWERNAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -1014,7 +1014,7 @@
             <macros>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.2</value>
+                    <value>1.0.3</value>
                 </macro>
             </macros>
             <templates/>

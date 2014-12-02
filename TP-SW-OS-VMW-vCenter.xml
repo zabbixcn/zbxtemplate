@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-05-28T18:44:42Z</date>
+    <date>2014-11-19T11:18:43Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -28,7 +28,7 @@
                     <type>3</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>vmware.cluster.discovery[{$URL}]</key>
+                    <key>vmware.cluster.discovery[&quot;{$URL}&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -53,12 +53,12 @@
                     <description>Using {#CLUSTER.ID} or {#CLUSTER.NAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Status of cluster &quot;$2&quot; (VM)</name>
+                            <name>Status of cluster &quot;{#CLUSTER.NAME}&quot;</name>
                             <type>3</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vmware.cluster.status[{$URL},{#CLUSTER.NAME}]</key>
+                            <key>vmware.cluster.status[&quot;{$URL}&quot;,&quot;{#CLUSTER.NAME}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -99,8 +99,8 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-SW-OS-VMW-vCenter:vmware.cluster.status[{$URL},{#CLUSTER.NAME}].last(0)}&gt;1</expression>
-                            <name>Status of cluster &quot;{#CLUSTER.NAME}&quot; was abnormal</name>
+                            <expression>{TP-SW-OS-VMW-vCenter:vmware.cluster.status[&quot;{$URL}&quot;,&quot;{#CLUSTER.NAME}&quot;].last(0)}&gt;1</expression>
+                            <name>Status of cluster &quot;{#CLUSTER.NAME}&quot; was abnormal on vcenter &quot;{HOST.NAME}&quot;</name>
                             <url/>
                             <status>0</status>
                             <priority>2</priority>
@@ -127,7 +127,7 @@
                 </macro>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.0</value>
+                    <value>1.0.1</value>
                 </macro>
             </macros>
             <templates/>

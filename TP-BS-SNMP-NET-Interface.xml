@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-09-11T10:10:18Z</date>
+    <date>2014-10-28T06:20:19Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -28,7 +28,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>lld.net.if[&quot;{HOST.IP}&quot;, &quot;{$SNMP_COMMUNITY}&quot;]</key>
+                    <key>lld.net.if[&quot;{HOST.IP}&quot;,&quot;{$SNMP_COMMUNITY}&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -53,12 +53,96 @@
                     <description>Using {#SNMPINDEX} or {#SNMPVALUE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Inbound Bps on interface $1 (SNMP)</name>
+                            <name>Inbound discarded packets on interface &quot;{#SNMPVALUE}&quot;</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>IF-MIB::ifInDiscards.{#SNMPINDEX}</snmp_oid>
+                            <key>ifInDiscards[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>1</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Network Interface</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Inbound error packets on interface &quot;{#SNMPVALUE}&quot;</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>IF-MIB::ifInErrors.{#SNMPINDEX}</snmp_oid>
+                            <key>ifInErrors[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>1</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Network Interface</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Inbound throughput on interface &quot;{#SNMPVALUE}&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>IF-MIB::ifInOctets.{#SNMPINDEX}</snmp_oid>
-                            <key>ifInOctets[{#SNMPVALUE}]</key>
+                            <key>ifInOctets[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -95,96 +179,12 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Inbound discards on interface $1 (SNMP)</name>
-                            <type>4</type>
-                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
-                            <multiplier>0</multiplier>
-                            <snmp_oid>IF-MIB::ifInDiscards.{#SNMPINDEX}</snmp_oid>
-                            <key>ifInDiscards[{#SNMPVALUE}]</key>
-                            <delay>300</delay>
-                            <history>7</history>
-                            <trends>90</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <delta>1</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Network Interface</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Inbound errors on interface $1 (SNMP)</name>
-                            <type>4</type>
-                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
-                            <multiplier>0</multiplier>
-                            <snmp_oid>IF-MIB::ifInErrors.{#SNMPINDEX}</snmp_oid>
-                            <key>ifInErrors[{#SNMPVALUE}]</key>
-                            <delay>300</delay>
-                            <history>7</history>
-                            <trends>90</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <delta>1</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Network Interface</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Operational status of interface $1 (SNMP)</name>
+                            <name>Operational status of interface &quot;{#SNMPVALUE}&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>IF-MIB::ifOperStatus.{#SNMPINDEX}</snmp_oid>
-                            <key>ifOperStatus[{#SNMPVALUE}]</key>
+                            <key>ifOperStatus[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -229,12 +229,96 @@ lowerLayerDown(7)</description>
                             </valuemap>
                         </item_prototype>
                         <item_prototype>
-                            <name>Outbound Bps on interface $1 (SNMP)</name>
+                            <name>Outbound discarded packets on interface &quot;{#SNMPVALUE}&quot;</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>IF-MIB::ifOutDiscards.{#SNMPINDEX}</snmp_oid>
+                            <key>ifOutDiscards[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>1</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Network Interface</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Outbound error packets on interface &quot;{#SNMPVALUE}&quot;</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>IF-MIB::ifOutErrors.{#SNMPINDEX}</snmp_oid>
+                            <key>ifOutErrors[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>1</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Network Interface</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Outbound throughput on interface &quot;{#SNMPVALUE}&quot;</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
                             <snmp_oid>IF-MIB::ifOutOctets.{#SNMPINDEX}</snmp_oid>
-                            <key>ifOutOctets[{#SNMPVALUE}]</key>
+                            <key>ifOutOctets[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -270,95 +354,11 @@ lowerLayerDown(7)</description>
                             </applications>
                             <valuemap/>
                         </item_prototype>
-                        <item_prototype>
-                            <name>Outbound discards on interface $1 (SNMP)</name>
-                            <type>4</type>
-                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
-                            <multiplier>0</multiplier>
-                            <snmp_oid>IF-MIB::ifOutDiscards.{#SNMPINDEX}</snmp_oid>
-                            <key>ifOutDiscards[{#SNMPVALUE}]</key>
-                            <delay>300</delay>
-                            <history>7</history>
-                            <trends>90</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <delta>1</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Network Interface</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Outbound errors on interface $1 (SNMP)</name>
-                            <type>4</type>
-                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
-                            <multiplier>0</multiplier>
-                            <snmp_oid>IF-MIB::ifOutErrors.{#SNMPINDEX}</snmp_oid>
-                            <key>ifOutErrors[{#SNMPVALUE}]</key>
-                            <delay>300</delay>
-                            <history>7</history>
-                            <trends>90</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <delta>1</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Network Interface</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                        </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-BS-SNMP-NET-Interface:ifOperStatus[{#SNMPVALUE}].last(0)}#1</expression>
-                            <name>Status of interface {#SNMPVALUE} was abnormal on {HOST.NAME}</name>
+                            <expression>{TP-BS-SNMP-NET-Interface:ifOperStatus[&quot;{#SNMPINDEX}&quot;].last(0)}#1</expression>
+                            <name>Status of interface &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>2</priority>
@@ -368,7 +368,7 @@ lowerLayerDown(7)</description>
                     </trigger_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>Bps on Interface {#SNMPVALUE} (SNMP)</name>
+                            <name>Throughput on Interface &quot;{#SNMPVALUE} ({#SNMPINDEX})&quot;</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -394,7 +394,7 @@ lowerLayerDown(7)</description>
                                     <type>0</type>
                                     <item>
                                         <host>TP-BS-SNMP-NET-Interface</host>
-                                        <key>ifInOctets[{#SNMPVALUE}]</key>
+                                        <key>ifInOctets[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -406,7 +406,7 @@ lowerLayerDown(7)</description>
                                     <type>0</type>
                                     <item>
                                         <host>TP-BS-SNMP-NET-Interface</host>
-                                        <key>ifOutOctets[{#SNMPVALUE}]</key>
+                                        <key>ifOutOctets[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -422,7 +422,7 @@ lowerLayerDown(7)</description>
                 </macro>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>2.0.0</value>
+                    <value>2.0.1</value>
                 </macro>
             </macros>
             <templates/>

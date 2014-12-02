@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-09-15T09:53:29Z</date>
+    <date>2014-11-19T12:30:26Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -41,12 +41,12 @@
             </applications>
             <items>
                 <item>
-                    <name>Ballooned memory (VM)</name>
+                    <name>Ballooned memory</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.memory.size.ballooned[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.memory.size.ballooned[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -83,12 +83,12 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Cluster name (VM)</name>
+                    <name>Cluster name</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.cluster.name[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.cluster.name[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>3600</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -125,12 +125,12 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Committed storage space (VM)</name>
+                    <name>Committed storage space</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.storage.committed[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.storage.committed[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -167,12 +167,12 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Compressed memory (VM)</name>
+                    <name>Compressed memory</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.memory.size.compressed[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.memory.size.compressed[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -209,12 +209,12 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>CPU usage (VM)</name>
+                    <name>CPU usage</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.cpu.usage[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.cpu.usage[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -251,12 +251,12 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Guest memory usage (VM)</name>
+                    <name>Guest memory usage</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.memory.size.usage.guest[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.memory.size.usage.guest[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -293,7 +293,7 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Guest memory usage in % (VM)</name>
+                    <name>Guest memory usage in %</name>
                     <type>15</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -316,7 +316,7 @@
                     <snmpv3_privpassphrase/>
                     <formula>1</formula>
                     <delay_flex/>
-                    <params>100*last(&quot;vmware.vm.memory.size.usage.guest[{$URL},{HOST.HOST}]&quot;,0)/last(&quot;vmware.vm.memory.size[{$URL},{HOST.HOST}]&quot;,0)</params>
+                    <params>100*last(&quot;vmware.vm.memory.size.usage.guest[\&quot;{$URL}\&quot;,\&quot;{HOST.HOST}\&quot;]&quot;,0)/last(&quot;vmware.vm.memory.size[\&quot;{$URL}\&quot;,\&quot;{HOST.HOST}\&quot;]&quot;,0)</params>
                     <ipmi_sensor/>
                     <data_type>0</data_type>
                     <authtype>0</authtype>
@@ -335,12 +335,12 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Host memory usage (VM)</name>
+                    <name>Host memory usage</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.memory.size.usage.host[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.memory.size.usage.host[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -377,12 +377,12 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Hypervisor name (VM)</name>
+                    <name>Hypervisor name</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.hv.name[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.hv.name[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>3600</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -419,12 +419,12 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Number of CPUs (VM)</name>
+                    <name>Number of CPUs</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.cpu.num[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.cpu.num[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>3600</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -461,12 +461,12 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Power state (VM)</name>
+                    <name>Power state</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.powerstate[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.powerstate[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -505,12 +505,12 @@
                     </valuemap>
                 </item>
                 <item>
-                    <name>Private memory (VM)</name>
+                    <name>Private memory</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.memory.size.private[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.memory.size.private[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -547,12 +547,12 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Shared memory (VM)</name>
+                    <name>Shared memory</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.memory.size.shared[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.memory.size.shared[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -589,12 +589,12 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Swapped memory (VM)</name>
+                    <name>Swapped memory</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.memory.size.swapped[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.memory.size.swapped[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -631,12 +631,12 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Total memory (VM)</name>
+                    <name>Total memory</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.memory.size[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.memory.size[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>3600</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -673,12 +673,12 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Uncommitted storage space (VM)</name>
+                    <name>Uncommitted storage space</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.storage.uncommitted[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.storage.uncommitted[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -715,12 +715,12 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Uptime (VM)</name>
+                    <name>Uptime</name>
                     <type>3</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>vmware.vm.uptime[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.uptime[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
@@ -763,7 +763,7 @@
                     <type>3</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>vmware.vm.vfs.fs.discovery[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.vfs.fs.discovery[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -788,12 +788,12 @@
                     <description>Using {#FSNAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Total space on file system {#FSNAME} (VM)</name>
+                            <name>Total space on file system &quot;{#FSNAME}&quot;</name>
                             <type>3</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vmware.vm.vfs.fs.size[{$URL},{HOST.HOST},{#FSNAME},total]</key>
+                            <key>vmware.vm.vfs.fs.size[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,{#FSNAME},&quot;total&quot;]</key>
                             <delay>3600</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -830,12 +830,12 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Used space on file system {#FSNAME} (VM)</name>
+                            <name>Used space on file system &quot;{#FSNAME}&quot;</name>
                             <type>3</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vmware.vm.vfs.fs.size[{$URL},{HOST.HOST},{#FSNAME},used]</key>
+                            <key>vmware.vm.vfs.fs.size[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,{#FSNAME},&quot;used&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -872,12 +872,12 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Used space on file system {#FSNAME} in % (VM)</name>
-                            <type>15</type>
+                            <name>Used space on file system &quot;{#FSNAME}&quot; in %</name>
+                            <type>3</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vmware.vm.vfs.fs.size.ptc[{#FSNAME}]</key>
+                            <key>vmware.vm.vfs.fs.size[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,{#FSNAME},&quot;pused&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -895,12 +895,12 @@
                             <snmpv3_privpassphrase/>
                             <formula>1</formula>
                             <delay_flex/>
-                            <params>100*last(&quot;vmware.vm.vfs.fs.size[{$URL},{HOST.HOST},{#FSNAME},used]&quot;,0)/last(&quot;vmware.vm.vfs.fs.size[{$URL},{HOST.HOST},{#FSNAME},total]&quot;,0)</params>
+                            <params/>
                             <ipmi_sensor/>
                             <data_type>0</data_type>
                             <authtype>0</authtype>
-                            <username/>
-                            <password/>
+                            <username>{$USERNAME}</username>
+                            <password>{$PASSWORD}</password>
                             <publickey/>
                             <privatekey/>
                             <port/>
@@ -916,8 +916,8 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>({TRIGGER.VALUE}=0&amp;{TP-SW-OS-VMW-VM:vmware.vm.vfs.fs.size.ptc[{#FSNAME}].min(10m)}&gt;{$FS.PUSED.WARN})|({TRIGGER.VALUE}=1&amp;{TP-SW-OS-VMW-VM:vmware.vm.vfs.fs.size.ptc[{#FSNAME}].min(10m)}&gt;{$FS.PUSED.NORM})</expression>
-                            <name>Used space of file system {#FSNAME} was too high on {HOST.NAME}</name>
+                            <expression>({TRIGGER.VALUE}=0&amp;{TP-SW-OS-VMW-VM:vmware.vm.vfs.fs.size[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,{#FSNAME},&quot;pused&quot;].min(10m)}&gt;{$FS.PUSED.WARN})|({TRIGGER.VALUE}=1&amp;{TP-SW-OS-VMW-VM:vmware.vm.vfs.fs.size[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,{#FSNAME},&quot;pused&quot;].min(10m)}&gt;{$FS.PUSED.NORM})</expression>
+                            <name>Used space of file system &quot;{#FSNAME}&quot; was too high on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>2</priority>
@@ -927,7 +927,7 @@
                     </trigger_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>Space Usage on File System {#FSNAME} (VM)</name>
+                            <name>Space Usage on File System &quot;{#FSNAME}&quot;</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -939,33 +939,24 @@
                             <show_3d>0</show_3d>
                             <percent_left>0.0000</percent_left>
                             <percent_right>0.0000</percent_right>
-                            <ymin_type_1>0</ymin_type_1>
-                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_type_1>1</ymin_type_1>
+                            <ymax_type_1>2</ymax_type_1>
                             <ymin_item_1>0</ymin_item_1>
-                            <ymax_item_1>0</ymax_item_1>
+                            <ymax_item_1>
+                                <host>TP-SW-OS-VMW-VM</host>
+                                <key>vmware.vm.vfs.fs.size[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,{#FSNAME},&quot;total&quot;]</key>
+                            </ymax_item_1>
                             <graph_items>
                                 <graph_item>
                                     <sortorder>0</sortorder>
                                     <drawtype>5</drawtype>
-                                    <color>9AC23C</color>
+                                    <color>956E96</color>
                                     <yaxisside>0</yaxisside>
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
                                         <host>TP-SW-OS-VMW-VM</host>
-                                        <key>vmware.vm.vfs.fs.size[{$URL},{HOST.HOST},{#FSNAME},total]</key>
-                                    </item>
-                                </graph_item>
-                                <graph_item>
-                                    <sortorder>1</sortorder>
-                                    <drawtype>5</drawtype>
-                                    <color>D85E3D</color>
-                                    <yaxisside>0</yaxisside>
-                                    <calc_fnc>2</calc_fnc>
-                                    <type>0</type>
-                                    <item>
-                                        <host>TP-SW-OS-VMW-VM</host>
-                                        <key>vmware.vm.vfs.fs.size[{$URL},{HOST.HOST},{#FSNAME},used]</key>
+                                        <key>vmware.vm.vfs.fs.size[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,{#FSNAME},&quot;used&quot;]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -974,11 +965,11 @@
                     <host_prototypes/>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>Virtual Disk Device</name>
+                    <name>vDisk Device</name>
                     <type>3</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>vmware.vm.vfs.dev.discovery[{$URL},{HOST.HOST}]</key>
+                    <key>vmware.vm.vfs.dev.discovery[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -1003,12 +994,12 @@
                     <description>Using {#DISKNAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Read Bps on disk $3 (VM)</name>
+                            <name>Read bandwidth on disk &quot;{#DISKNAME}&quot;</name>
                             <type>3</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vmware.vm.vfs.dev.read[{$URL},{HOST.HOST},{#DISKNAME},bps]</key>
+                            <key>vmware.vm.vfs.dev.read[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,&quot;{#DISKNAME}&quot;,&quot;bps&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -1045,12 +1036,12 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Read Ops on disk $3 (VM)</name>
+                            <name>Read throughput on disk &quot;{#DISKNAME}&quot;</name>
                             <type>3</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vmware.vm.vfs.dev.read[{$URL},{HOST.HOST},{#DISKNAME},ops]</key>
+                            <key>vmware.vm.vfs.dev.read[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,&quot;{#DISKNAME}&quot;,&quot;ops&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -1087,12 +1078,12 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Write Bps on disk $3 (VM)</name>
+                            <name>Write bandwidth on disk &quot;{#DISKNAME}&quot;</name>
                             <type>3</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vmware.vm.vfs.dev.write[{$URL},{HOST.HOST},{#DISKNAME},bps]</key>
+                            <key>vmware.vm.vfs.dev.write[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,&quot;{#DISKNAME}&quot;,&quot;bps&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -1129,12 +1120,12 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Write Ops on disk $3 (VM)</name>
+                            <name>Write throughput on disk &quot;{#DISKNAME}&quot;</name>
                             <type>3</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vmware.vm.vfs.dev.write[{$URL},{HOST.HOST},{#DISKNAME},ops]</key>
+                            <key>vmware.vm.vfs.dev.write[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,&quot;{#DISKNAME}&quot;,&quot;ops&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -1174,214 +1165,7 @@
                     <trigger_prototypes/>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>Bps on Disk {#DISKNAME} (VM)</name>
-                            <width>900</width>
-                            <height>200</height>
-                            <yaxismin>0.0000</yaxismin>
-                            <yaxismax>100.0000</yaxismax>
-                            <show_work_period>0</show_work_period>
-                            <show_triggers>1</show_triggers>
-                            <type>1</type>
-                            <show_legend>1</show_legend>
-                            <show_3d>0</show_3d>
-                            <percent_left>0.0000</percent_left>
-                            <percent_right>0.0000</percent_right>
-                            <ymin_type_1>0</ymin_type_1>
-                            <ymax_type_1>0</ymax_type_1>
-                            <ymin_item_1>0</ymin_item_1>
-                            <ymax_item_1>0</ymax_item_1>
-                            <graph_items>
-                                <graph_item>
-                                    <sortorder>0</sortorder>
-                                    <drawtype>0</drawtype>
-                                    <color>9AC23C</color>
-                                    <yaxisside>0</yaxisside>
-                                    <calc_fnc>2</calc_fnc>
-                                    <type>0</type>
-                                    <item>
-                                        <host>TP-SW-OS-VMW-VM</host>
-                                        <key>vmware.vm.vfs.dev.read[{$URL},{HOST.HOST},{#DISKNAME},bps]</key>
-                                    </item>
-                                </graph_item>
-                                <graph_item>
-                                    <sortorder>1</sortorder>
-                                    <drawtype>0</drawtype>
-                                    <color>956E96</color>
-                                    <yaxisside>0</yaxisside>
-                                    <calc_fnc>2</calc_fnc>
-                                    <type>0</type>
-                                    <item>
-                                        <host>TP-SW-OS-VMW-VM</host>
-                                        <key>vmware.vm.vfs.dev.write[{$URL},{HOST.HOST},{#DISKNAME},bps]</key>
-                                    </item>
-                                </graph_item>
-                            </graph_items>
-                        </graph_prototype>
-                        <graph_prototype>
-                            <name>Ops on Disk {#DISKNAME} (VM)</name>
-                            <width>900</width>
-                            <height>200</height>
-                            <yaxismin>0.0000</yaxismin>
-                            <yaxismax>100.0000</yaxismax>
-                            <show_work_period>0</show_work_period>
-                            <show_triggers>1</show_triggers>
-                            <type>1</type>
-                            <show_legend>1</show_legend>
-                            <show_3d>0</show_3d>
-                            <percent_left>0.0000</percent_left>
-                            <percent_right>0.0000</percent_right>
-                            <ymin_type_1>0</ymin_type_1>
-                            <ymax_type_1>0</ymax_type_1>
-                            <ymin_item_1>0</ymin_item_1>
-                            <ymax_item_1>0</ymax_item_1>
-                            <graph_items>
-                                <graph_item>
-                                    <sortorder>0</sortorder>
-                                    <drawtype>0</drawtype>
-                                    <color>9AC23C</color>
-                                    <yaxisside>0</yaxisside>
-                                    <calc_fnc>2</calc_fnc>
-                                    <type>0</type>
-                                    <item>
-                                        <host>TP-SW-OS-VMW-VM</host>
-                                        <key>vmware.vm.vfs.dev.read[{$URL},{HOST.HOST},{#DISKNAME},ops]</key>
-                                    </item>
-                                </graph_item>
-                                <graph_item>
-                                    <sortorder>1</sortorder>
-                                    <drawtype>0</drawtype>
-                                    <color>956E96</color>
-                                    <yaxisside>0</yaxisside>
-                                    <calc_fnc>2</calc_fnc>
-                                    <type>0</type>
-                                    <item>
-                                        <host>TP-SW-OS-VMW-VM</host>
-                                        <key>vmware.vm.vfs.dev.write[{$URL},{HOST.HOST},{#DISKNAME},ops]</key>
-                                    </item>
-                                </graph_item>
-                            </graph_items>
-                        </graph_prototype>
-                    </graph_prototypes>
-                    <host_prototypes/>
-                </discovery_rule>
-                <discovery_rule>
-                    <name>Virtual Network Interface</name>
-                    <type>3</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>vmware.vm.net.if.discovery[{$URL},{HOST.HOST}]</key>
-                    <delay>3600</delay>
-                    <status>0</status>
-                    <allowed_hosts/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username>{$USERNAME}</username>
-                    <password>{$PASSWORD}</password>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <filter>:</filter>
-                    <lifetime>7</lifetime>
-                    <description>Using {#IFNAME} for filter</description>
-                    <item_prototypes>
-                        <item_prototype>
-                            <name>Inbound Bps on interface $3 (VM)</name>
-                            <type>3</type>
-                            <snmp_community/>
-                            <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>vmware.vm.net.if.in[{$URL},{HOST.HOST},{#IFNAME},bps]</key>
-                            <delay>300</delay>
-                            <history>7</history>
-                            <trends>90</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units>Bps</units>
-                            <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username>{$USERNAME}</username>
-                            <password>{$PASSWORD}</password>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Network Interface</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Outbound Bps on interface $3 (VM)</name>
-                            <type>3</type>
-                            <snmp_community/>
-                            <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>vmware.vm.net.if.out[{$URL},{HOST.HOST},{#IFNAME},bps]</key>
-                            <delay>300</delay>
-                            <history>7</history>
-                            <trends>90</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units>Bps</units>
-                            <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username>{$USERNAME}</username>
-                            <password>{$PASSWORD}</password>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Network Interface</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                        </item_prototype>
-                    </item_prototypes>
-                    <trigger_prototypes/>
-                    <graph_prototypes>
-                        <graph_prototype>
-                            <name>Bps on Interface {#IFNAME} (VM)</name>
+                            <name>Bandwidth on Disk &quot;{#DISKNAME}&quot;</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -1407,7 +1191,7 @@
                                     <type>0</type>
                                     <item>
                                         <host>TP-SW-OS-VMW-VM</host>
-                                        <key>vmware.vm.net.if.in[{$URL},{HOST.HOST},{#IFNAME},bps]</key>
+                                        <key>vmware.vm.vfs.dev.read[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,&quot;{#DISKNAME}&quot;,&quot;bps&quot;]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -1419,7 +1203,214 @@
                                     <type>0</type>
                                     <item>
                                         <host>TP-SW-OS-VMW-VM</host>
-                                        <key>vmware.vm.net.if.out[{$URL},{HOST.HOST},{#IFNAME},bps]</key>
+                                        <key>vmware.vm.vfs.dev.write[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,&quot;{#DISKNAME}&quot;,&quot;bps&quot;]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>Throughput on Disk &quot;{#DISKNAME}&quot;</name>
+                            <width>900</width>
+                            <height>200</height>
+                            <yaxismin>0.0000</yaxismin>
+                            <yaxismax>100.0000</yaxismax>
+                            <show_work_period>0</show_work_period>
+                            <show_triggers>1</show_triggers>
+                            <type>1</type>
+                            <show_legend>1</show_legend>
+                            <show_3d>0</show_3d>
+                            <percent_left>0.0000</percent_left>
+                            <percent_right>0.0000</percent_right>
+                            <ymin_type_1>0</ymin_type_1>
+                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_item_1>0</ymin_item_1>
+                            <ymax_item_1>0</ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>0</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>6CB8CA</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>TP-SW-OS-VMW-VM</host>
+                                        <key>vmware.vm.vfs.dev.read[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,&quot;{#DISKNAME}&quot;,&quot;ops&quot;]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>FAC61D</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>TP-SW-OS-VMW-VM</host>
+                                        <key>vmware.vm.vfs.dev.write[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,&quot;{#DISKNAME}&quot;,&quot;ops&quot;]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>vNetwork Interface</name>
+                    <type>3</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>vmware.vm.net.if.discovery[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
+                    <delay>3600</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>:</filter>
+                    <lifetime>7</lifetime>
+                    <description>Using {#IFNAME} for filter</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Inbound throughput on interface &quot;{#IFNAME}&quot;</name>
+                            <type>3</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>vmware.vm.net.if.in[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,&quot;{#IFNAME}&quot;,&quot;bps&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>Bps</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username>{$USERNAME}</username>
+                            <password>{$PASSWORD}</password>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Network Interface</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Outbound throughput on interface &quot;{#IFNAME}&quot;</name>
+                            <type>3</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>vmware.vm.net.if.out[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,&quot;{#IFNAME}&quot;,&quot;bps&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>Bps</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username>{$USERNAME}</username>
+                            <password>{$PASSWORD}</password>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Network Interface</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes/>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>Throughput on Interface &quot;{#IFNAME}&quot;</name>
+                            <width>900</width>
+                            <height>200</height>
+                            <yaxismin>0.0000</yaxismin>
+                            <yaxismax>100.0000</yaxismax>
+                            <show_work_period>0</show_work_period>
+                            <show_triggers>1</show_triggers>
+                            <type>1</type>
+                            <show_legend>1</show_legend>
+                            <show_3d>0</show_3d>
+                            <percent_left>0.0000</percent_left>
+                            <percent_right>0.0000</percent_right>
+                            <ymin_type_1>0</ymin_type_1>
+                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_item_1>0</ymin_item_1>
+                            <ymax_item_1>0</ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>0</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>6CB8CA</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>TP-SW-OS-VMW-VM</host>
+                                        <key>vmware.vm.net.if.in[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,&quot;{#IFNAME}&quot;,&quot;bps&quot;]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>FAC61D</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>TP-SW-OS-VMW-VM</host>
+                                        <key>vmware.vm.net.if.out[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;,&quot;{#IFNAME}&quot;,&quot;bps&quot;]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -1459,33 +1450,54 @@
                 </macro>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.1</value>
+                    <value>1.0.2</value>
                 </macro>
             </macros>
             <templates/>
             <screens>
                 <screen>
-                    <name>System Overview (VM)</name>
+                    <name>System Overview</name>
                     <hsize>1</hsize>
-                    <vsize>4</vsize>
+                    <vsize>3</vsize>
                     <screen_items>
                         <screen_item>
-                            <resourcetype>3</resourcetype>
+                            <resourcetype>0</resourcetype>
                             <width>500</width>
                             <height>100</height>
                             <x>0</x>
                             <y>0</y>
                             <colspan>1</colspan>
                             <rowspan>1</rowspan>
-                            <elements>1</elements>
-                            <valign>0</valign>
+                            <elements>0</elements>
+                            <valign>1</valign>
                             <halign>0</halign>
                             <style>0</style>
                             <url/>
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
                             <resource>
-                                <key>vmware.vm.cluster.name[{$URL},{HOST.HOST}]</key>
+                                <name>Guest Memory Usage</name>
+                                <host>TP-SW-OS-VMW-VM</host>
+                            </resource>
+                            <application/>
+                        </screen_item>
+                        <screen_item>
+                            <resourcetype>0</resourcetype>
+                            <width>500</width>
+                            <height>100</height>
+                            <x>0</x>
+                            <y>1</y>
+                            <colspan>1</colspan>
+                            <rowspan>1</rowspan>
+                            <elements>0</elements>
+                            <valign>1</valign>
+                            <halign>0</halign>
+                            <style>0</style>
+                            <url/>
+                            <dynamic>0</dynamic>
+                            <sort_triggers>0</sort_triggers>
+                            <resource>
+                                <name>Memory Usage Detail</name>
                                 <host>TP-SW-OS-VMW-VM</host>
                             </resource>
                             <application/>
@@ -1506,49 +1518,7 @@
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
                             <resource>
-                                <name>Guest Memory Usage (VM)</name>
-                                <host>TP-SW-OS-VMW-VM</host>
-                            </resource>
-                            <application/>
-                        </screen_item>
-                        <screen_item>
-                            <resourcetype>0</resourcetype>
-                            <width>500</width>
-                            <height>100</height>
-                            <x>0</x>
-                            <y>3</y>
-                            <colspan>1</colspan>
-                            <rowspan>1</rowspan>
-                            <elements>0</elements>
-                            <valign>1</valign>
-                            <halign>0</halign>
-                            <style>0</style>
-                            <url/>
-                            <dynamic>0</dynamic>
-                            <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>Memory Usage Detail (VM)</name>
-                                <host>TP-SW-OS-VMW-VM</host>
-                            </resource>
-                            <application/>
-                        </screen_item>
-                        <screen_item>
-                            <resourcetype>3</resourcetype>
-                            <width>500</width>
-                            <height>100</height>
-                            <x>0</x>
-                            <y>1</y>
-                            <colspan>1</colspan>
-                            <rowspan>1</rowspan>
-                            <elements>1</elements>
-                            <valign>0</valign>
-                            <halign>0</halign>
-                            <style>0</style>
-                            <url/>
-                            <dynamic>0</dynamic>
-                            <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <key>vmware.vm.hv.name[{$URL},{HOST.HOST}]</key>
+                                <name>Storage Space Usage</name>
                                 <host>TP-SW-OS-VMW-VM</host>
                             </resource>
                             <application/>
@@ -1570,11 +1540,11 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{TP-SW-OS-VMW-VM:vmware.vm.powerstate[{$URL},{HOST.HOST}].diff(0)}&gt;0</expression>
+            <expression>{TP-SW-OS-VMW-VM:vmware.vm.powerstate[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;].diff(0)}&gt;0</expression>
             <name>Power state was changed on {HOST.NAME}</name>
             <url/>
             <status>0</status>
-            <priority>3</priority>
+            <priority>2</priority>
             <description/>
             <type>0</type>
             <dependencies/>
@@ -1582,7 +1552,7 @@
     </triggers>
     <graphs>
         <graph>
-            <name>Guest Memory Usage (VM)</name>
+            <name>Guest Memory Usage</name>
             <width>900</width>
             <height>200</height>
             <yaxismin>0.0000</yaxismin>
@@ -1594,39 +1564,30 @@
             <show_3d>0</show_3d>
             <percent_left>0.0000</percent_left>
             <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
+            <ymin_type_1>1</ymin_type_1>
+            <ymax_type_1>2</ymax_type_1>
             <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
+            <ymax_item_1>
+                <host>TP-SW-OS-VMW-VM</host>
+                <key>vmware.vm.memory.size[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
+            </ymax_item_1>
             <graph_items>
                 <graph_item>
                     <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
+                    <drawtype>5</drawtype>
                     <color>D85E3D</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>TP-SW-OS-VMW-VM</host>
-                        <key>vmware.vm.memory.size[{$URL},{HOST.HOST}]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>5</drawtype>
-                    <color>9AC23C</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>TP-SW-OS-VMW-VM</host>
-                        <key>vmware.vm.memory.size.usage.guest[{$URL},{HOST.HOST}]</key>
+                        <key>vmware.vm.memory.size.usage.guest[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     </item>
                 </graph_item>
             </graph_items>
         </graph>
         <graph>
-            <name>Memory Usage Detail (VM)</name>
+            <name>Memory Usage Detail</name>
             <width>900</width>
             <height>200</height>
             <yaxismin>0.0000</yaxismin>
@@ -1638,10 +1599,13 @@
             <show_3d>0</show_3d>
             <percent_left>0.0000</percent_left>
             <percent_right>0.0000</percent_right>
-            <ymin_type_1>0</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
+            <ymin_type_1>1</ymin_type_1>
+            <ymax_type_1>2</ymax_type_1>
             <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
+            <ymax_item_1>
+                <host>TP-SW-OS-VMW-VM</host>
+                <key>vmware.vm.memory.size[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
+            </ymax_item_1>
             <graph_items>
                 <graph_item>
                     <sortorder>0</sortorder>
@@ -1652,7 +1616,7 @@
                     <type>0</type>
                     <item>
                         <host>TP-SW-OS-VMW-VM</host>
-                        <key>vmware.vm.memory.size.ballooned[{$URL},{HOST.HOST}]</key>
+                        <key>vmware.vm.memory.size.ballooned[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1664,7 +1628,7 @@
                     <type>0</type>
                     <item>
                         <host>TP-SW-OS-VMW-VM</host>
-                        <key>vmware.vm.memory.size.compressed[{$URL},{HOST.HOST}]</key>
+                        <key>vmware.vm.memory.size.compressed[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1676,7 +1640,7 @@
                     <type>0</type>
                     <item>
                         <host>TP-SW-OS-VMW-VM</host>
-                        <key>vmware.vm.memory.size.private[{$URL},{HOST.HOST}]</key>
+                        <key>vmware.vm.memory.size.private[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1688,7 +1652,7 @@
                     <type>0</type>
                     <item>
                         <host>TP-SW-OS-VMW-VM</host>
-                        <key>vmware.vm.memory.size.shared[{$URL},{HOST.HOST}]</key>
+                        <key>vmware.vm.memory.size.shared[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -1700,7 +1664,51 @@
                     <type>0</type>
                     <item>
                         <host>TP-SW-OS-VMW-VM</host>
-                        <key>vmware.vm.memory.size.swapped[{$URL},{HOST.HOST}]</key>
+                        <key>vmware.vm.memory.size.swapped[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Storage Space Usage</name>
+            <width>900</width>
+            <height>200</height>
+            <yaxismin>0.0000</yaxismin>
+            <yaxismax>100.0000</yaxismax>
+            <show_work_period>0</show_work_period>
+            <show_triggers>1</show_triggers>
+            <type>1</type>
+            <show_legend>1</show_legend>
+            <show_3d>0</show_3d>
+            <percent_left>0.0000</percent_left>
+            <percent_right>0.0000</percent_right>
+            <ymin_type_1>1</ymin_type_1>
+            <ymax_type_1>0</ymax_type_1>
+            <ymin_item_1>0</ymin_item_1>
+            <ymax_item_1>0</ymax_item_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>0</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>956E96</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>TP-SW-OS-VMW-VM</host>
+                        <key>vmware.vm.storage.committed[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>9AC23C</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>TP-SW-OS-VMW-VM</host>
+                        <key>vmware.vm.storage.uncommitted[&quot;{$URL}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     </item>
                 </graph_item>
             </graph_items>

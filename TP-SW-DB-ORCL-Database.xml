@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-10-22T12:04:30Z</date>
+    <date>2014-11-25T09:10:32Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -1431,7 +1431,7 @@
                             <history>90</history>
                             <trends>365</trends>
                             <status>0</status>
-                            <value_type>4</value_type>
+                            <value_type>1</value_type>
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
@@ -1643,7 +1643,7 @@
                             <history>90</history>
                             <trends>365</trends>
                             <status>0</status>
-                            <value_type>4</value_type>
+                            <value_type>1</value_type>
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
@@ -1780,7 +1780,7 @@
                             <history>90</history>
                             <trends>365</trends>
                             <status>0</status>
-                            <value_type>4</value_type>
+                            <value_type>1</value_type>
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
@@ -1950,7 +1950,7 @@
                             <history>90</history>
                             <trends>365</trends>
                             <status>0</status>
-                            <value_type>4</value_type>
+                            <value_type>1</value_type>
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
@@ -2091,7 +2091,7 @@ select tablespace_name, file_name, autoextensible&#13;
                             <history>90</history>
                             <trends>365</trends>
                             <status>0</status>
-                            <value_type>4</value_type>
+                            <value_type>1</value_type>
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>
@@ -2261,7 +2261,7 @@ select tablespace_name, file_name, autoextensible&#13;
                             <history>90</history>
                             <trends>365</trends>
                             <status>0</status>
-                            <value_type>4</value_type>
+                            <value_type>1</value_type>
                             <allowed_hosts/>
                             <units/>
                             <delta>0</delta>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-11-25T09:19:49Z</date>
+    <date>2014-11-28T07:01:17Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -285,7 +285,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-SW-STG-FALC-IPStor:rrReplicationStatus[&quot;{#SNMPINDEX}&quot;].str(&quot;Normal&quot;)}#1</expression>
+                            <expression>{TP-SW-STG-FALC-IPStor:rrReplicationStatus[&quot;{#SNMPINDEX}&quot;].str(&quot;Normal&quot;)}#1&amp;{TP-SW-STG-FALC-IPStor:rrReplicationStatus[&quot;{#SNMPINDEX}&quot;].str(&quot;Replication in Progress&quot;)}#1</expression>
                             <name>Status of replica resource &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>

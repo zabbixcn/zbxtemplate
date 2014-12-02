@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-12-02T10:43:35Z</date>
+    <date>2014-12-02T12:37:43Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -154,7 +154,7 @@
                             <history>7</history>
                             <trends>90</trends>
                             <status>0</status>
-                            <value_type>3</value_type>
+                            <value_type>0</value_type>
                             <allowed_hosts/>
                             <units>%</units>
                             <delta>0</delta>
@@ -485,7 +485,7 @@
                     </trigger_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>Memory Usage</name>
+                            <name>{#SNMPVALUE} (RAM) Usage</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -514,7 +514,7 @@
                                     <type>0</type>
                                     <item>
                                         <host>TP-SW-OS-SNMP-Windows</host>
-                                        <key>hrStorageUsedInPct.Mem[&quot;{#SNMPINDEX}&quot;]</key>
+                                        <key>hrStorageUsedInBytes.Mem[&quot;{#SNMPINDEX}&quot;]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -817,7 +817,7 @@
                     </trigger_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>Swap Usage</name>
+                            <name>{#SNMPVALUE} (Swap) Usage</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -839,7 +839,7 @@
                             <graph_items>
                                 <graph_item>
                                     <sortorder>0</sortorder>
-                                    <drawtype>0</drawtype>
+                                    <drawtype>5</drawtype>
                                     <color>D85E3D</color>
                                     <yaxisside>0</yaxisside>
                                     <calc_fnc>2</calc_fnc>

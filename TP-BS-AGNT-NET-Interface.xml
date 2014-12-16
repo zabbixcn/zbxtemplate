@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-05-28T18:40:18Z</date>
+    <date>2014-12-16T09:21:08Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -9,8 +9,8 @@
     </groups>
     <templates>
         <template>
-            <template>TP-BS-AGNT-Interface</template>
-            <name>TP-BS-AGNT-Interface</name>
+            <template>TP-BS-AGNT-NET-Interface</template>
+            <name>TP-BS-AGNT-NET-Interface</name>
             <groups>
                 <group>
                     <name>Templates</name>
@@ -48,17 +48,101 @@
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <filter>:</filter>
+                    <filter>{#IFNAME}:@Network interfaces for discovery</filter>
                     <lifetime>7</lifetime>
                     <description>Using {#IFNAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Inbound Bps on interface $1 (AGNT)</name>
+                            <name>Inbound discarded packets on interface &quot;{#IFNAME}&quot;</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>net.if.in[{#IFNAME}]</key>
+                            <key>net.if.in[&quot;{#IFNAME}&quot;,&quot;dropped&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>1</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Network Interface</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Inbound error packets on interface &quot;{#IFNAME}&quot;</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>net.if.in[&quot;{#IFNAME}&quot;,&quot;errors&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>1</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Network Interface</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Inbound throughput on interface &quot;{#IFNAME}&quot;</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>net.if.in[&quot;{#IFNAME}&quot;,&quot;bytes&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -95,12 +179,12 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Inbound discards on interface $1 (AGNT)</name>
+                            <name>Outbound discarded packets on interface &quot;{#IFNAME}&quot;</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>net.if.in[{#IFNAME},dropped]</key>
+                            <key>net.if.out[&quot;{#IFNAME}&quot;,&quot;dropped&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -137,12 +221,12 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Inbound errors on interface $1 (AGNT)</name>
+                            <name>Outbound error packets on interface &quot;{#IFNAME}&quot;</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>net.if.in[{#IFNAME},errors]</key>
+                            <key>net.if.out[&quot;{#IFNAME}&quot;,&quot;errors&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -179,12 +263,12 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Outbound Bps on interface $1 (AGNT)</name>
+                            <name>Outbound throughput on interface &quot;{#IFNAME}&quot;</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>net.if.out[{#IFNAME}]</key>
+                            <key>net.if.out[&quot;{#IFNAME}&quot;,&quot;bytes&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -192,90 +276,6 @@
                             <value_type>3</value_type>
                             <allowed_hosts/>
                             <units>Bps</units>
-                            <delta>1</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Network Interface</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Outbound discards on interface $1 (AGNT)</name>
-                            <type>0</type>
-                            <snmp_community/>
-                            <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>net.if.out[{#IFNAME},dropped]</key>
-                            <delay>300</delay>
-                            <history>7</history>
-                            <trends>90</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
-                            <delta>1</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
-                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
-                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
-                            <data_type>0</data_type>
-                            <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
-                            <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>Network Interface</name>
-                                </application>
-                            </applications>
-                            <valuemap/>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Outbound errors on interface $1 (AGNT)</name>
-                            <type>0</type>
-                            <snmp_community/>
-                            <multiplier>0</multiplier>
-                            <snmp_oid/>
-                            <key>net.if.out[{#IFNAME},errors]</key>
-                            <delay>300</delay>
-                            <history>7</history>
-                            <trends>90</trends>
-                            <status>0</status>
-                            <value_type>3</value_type>
-                            <allowed_hosts/>
-                            <units/>
                             <delta>1</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
@@ -308,7 +308,7 @@
                     <trigger_prototypes/>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>Bps on Interface {#IFNAME} (AGNT)</name>
+                            <name>Throughput on Interface &quot;{#IFNAME}&quot;</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -333,8 +333,8 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>TP-BS-AGNT-Interface</host>
-                                        <key>net.if.in[{#IFNAME}]</key>
+                                        <host>TP-BS-AGNT-NET-Interface</host>
+                                        <key>net.if.in[&quot;{#IFNAME}&quot;,&quot;bytes&quot;]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -345,8 +345,8 @@
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
-                                        <host>TP-BS-AGNT-Interface</host>
-                                        <key>net.if.out[{#IFNAME}]</key>
+                                        <host>TP-BS-AGNT-NET-Interface</host>
+                                        <key>net.if.out[&quot;{#IFNAME}&quot;,&quot;bytes&quot;]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -358,7 +358,7 @@
             <macros>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.0</value>
+                    <value>1.0.1</value>
                 </macro>
             </macros>
             <templates/>

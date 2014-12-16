@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-09-15T08:55:29Z</date>
+    <date>2014-12-16T09:08:57Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -48,17 +48,17 @@
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <filter>:</filter>
+                    <filter>{#FSTYPE}:@File systems for discovery</filter>
                     <lifetime>7</lifetime>
                     <description>Using {#FSNAME} or {#FSTYPE} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Total space on file system $1 (AGNT)</name>
+                            <name>Total space on file system &quot;{#FSNAME}&quot;</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.fs.size[{#FSNAME},total]</key>
+                            <key>vfs.fs.size[&quot;{#FSNAME}&quot;,&quot;total&quot;]</key>
                             <delay>3600</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -95,12 +95,12 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Used space on file system $1 (AGNT)</name>
+                            <name>Used space on file system &quot;{#FSNAME}&quot;</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.fs.size[{#FSNAME},used]</key>
+                            <key>vfs.fs.size[&quot;{#FSNAME}&quot;,&quot;used&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -137,12 +137,12 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Used space on file system $1 in % (AGNT)</name>
+                            <name>Used space on file system &quot;{#FSNAME}&quot; in %</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>vfs.fs.size[{#FSNAME},pused]</key>
+                            <key>vfs.fs.size[&quot;{#FSNAME}&quot;,&quot;pused&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -181,8 +181,8 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>({TRIGGER.VALUE}=0&amp;{TP-BS-AGNT-FileSystem:vfs.fs.size[{#FSNAME},pused].min(10m)}&gt;{$FS.PUSED.WARN})|({TRIGGER.VALUE}=1&amp;{TP-BS-AGNT-FileSystem:vfs.fs.size[{#FSNAME},pused].min(10m)}&gt;{$FS.PUSED.NORM})</expression>
-                            <name>Used space of file system {#FSNAME} was too high on {HOST.NAME}</name>
+                            <expression>({TRIGGER.VALUE}=0&amp;{TP-BS-AGNT-FileSystem:vfs.fs.size[&quot;{#FSNAME}&quot;,&quot;pused&quot;].min(10m)}&gt;{$FS.PUSED.WARN})|({TRIGGER.VALUE}=1&amp;{TP-BS-AGNT-FileSystem:vfs.fs.size[&quot;{#FSNAME}&quot;,&quot;pused&quot;].min(10m)}&gt;{$FS.PUSED.NORM})</expression>
+                            <name>Used space of file system &quot;{#FSNAME}&quot; was too high on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>2</priority>
@@ -192,7 +192,7 @@
                     </trigger_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>Space Usage on File System {#FSNAME}</name>
+                            <name>Space Usage on File System &quot;{#FSNAME}&quot;</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -204,33 +204,24 @@
                             <show_3d>0</show_3d>
                             <percent_left>0.0000</percent_left>
                             <percent_right>0.0000</percent_right>
-                            <ymin_type_1>0</ymin_type_1>
-                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_type_1>1</ymin_type_1>
+                            <ymax_type_1>2</ymax_type_1>
                             <ymin_item_1>0</ymin_item_1>
-                            <ymax_item_1>0</ymax_item_1>
+                            <ymax_item_1>
+                                <host>TP-BS-AGNT-FileSystem</host>
+                                <key>vfs.fs.size[&quot;{#FSNAME}&quot;,&quot;total&quot;]</key>
+                            </ymax_item_1>
                             <graph_items>
                                 <graph_item>
                                     <sortorder>0</sortorder>
                                     <drawtype>5</drawtype>
-                                    <color>9AC23C</color>
+                                    <color>956E96</color>
                                     <yaxisside>0</yaxisside>
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
                                         <host>TP-BS-AGNT-FileSystem</host>
-                                        <key>vfs.fs.size[{#FSNAME},total]</key>
-                                    </item>
-                                </graph_item>
-                                <graph_item>
-                                    <sortorder>1</sortorder>
-                                    <drawtype>5</drawtype>
-                                    <color>D85E3D</color>
-                                    <yaxisside>0</yaxisside>
-                                    <calc_fnc>2</calc_fnc>
-                                    <type>0</type>
-                                    <item>
-                                        <host>TP-BS-AGNT-FileSystem</host>
-                                        <key>vfs.fs.size[{#FSNAME},used]</key>
+                                        <key>vfs.fs.size[&quot;{#FSNAME}&quot;,&quot;used&quot;]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -250,7 +241,7 @@
                 </macro>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.1</value>
+                    <value>1.0.2</value>
                 </macro>
             </macros>
             <templates/>

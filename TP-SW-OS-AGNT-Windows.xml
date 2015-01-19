@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-12-16T14:08:27Z</date>
+    <date>2015-01-16T12:39:59Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -30,7 +30,7 @@
             <items>
                 <item>
                     <name>Available memory</name>
-                    <type>0</type>
+                    <type>7</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
@@ -72,7 +72,7 @@
                 </item>
                 <item>
                     <name>Available memory in %</name>
-                    <type>0</type>
+                    <type>7</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
@@ -114,7 +114,7 @@
                 </item>
                 <item>
                     <name>Free swap</name>
-                    <type>0</type>
+                    <type>7</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
@@ -198,7 +198,7 @@
                 </item>
                 <item>
                     <name>Sytem CPU in %</name>
-                    <type>0</type>
+                    <type>7</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
@@ -240,7 +240,7 @@
                 </item>
                 <item>
                     <name>Total memory</name>
-                    <type>0</type>
+                    <type>7</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
@@ -282,7 +282,7 @@
                 </item>
                 <item>
                     <name>Total processes</name>
-                    <type>0</type>
+                    <type>7</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
@@ -324,7 +324,7 @@
                 </item>
                 <item>
                     <name>Total swap</name>
-                    <type>0</type>
+                    <type>7</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
@@ -366,7 +366,7 @@
                 </item>
                 <item>
                     <name>Uptime</name>
-                    <type>0</type>
+                    <type>7</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>

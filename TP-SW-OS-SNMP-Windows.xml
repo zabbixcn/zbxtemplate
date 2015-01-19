@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-12-02T12:37:43Z</date>
+    <date>2015-01-16T07:18:03Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -309,7 +309,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>hrStorageSizeInBytes.Mem[{#SNMPVALUE}]</key>
+                            <key>hrStorageSizeInBytes.Mem[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>3600</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -502,7 +502,7 @@
                             <ymin_item_1>0</ymin_item_1>
                             <ymax_item_1>
                                 <host>TP-SW-OS-SNMP-Windows</host>
-                                <key>hrStorageSizeInBytes.Mem[{#SNMPVALUE}]</key>
+                                <key>hrStorageSizeInBytes.Mem[&quot;{#SNMPINDEX}&quot;]</key>
                             </ymax_item_1>
                             <graph_items>
                                 <graph_item>
@@ -641,7 +641,7 @@
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
-                            <key>hrStorageSizeInBytes.Swap[{#SNMPVALUE}]</key>
+                            <key>hrStorageSizeInBytes.Swap[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>3600</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -834,7 +834,7 @@
                             <ymin_item_1>0</ymin_item_1>
                             <ymax_item_1>
                                 <host>TP-SW-OS-SNMP-Windows</host>
-                                <key>hrStorageSizeInBytes.Swap[{#SNMPVALUE}]</key>
+                                <key>hrStorageSizeInBytes.Swap[&quot;{#SNMPINDEX}&quot;]</key>
                             </ymax_item_1>
                             <graph_items>
                                 <graph_item>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-11-25T09:10:32Z</date>
+    <date>2015-01-16T11:22:19Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -1428,7 +1428,7 @@
                             <snmp_oid/>
                             <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dkstatus&quot;,&quot;{#INDEX}&quot;]</key>
                             <delay>300</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -1549,7 +1549,7 @@
                     <description>Using {#INDEX} or {#NAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Free space on asm diskgroup &quot;$5&quot;</name>
+                            <name>Free space on asm diskgroup &quot;{#NAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>1</multiplier>
@@ -1591,7 +1591,7 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Free space on asm diskgroup &quot;$5&quot; in %</name>
+                            <name>Free space on asm diskgroup &quot;{#NAME}&quot; in %</name>
                             <type>15</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -1633,14 +1633,14 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Status of asm diskgroup &quot;$5&quot;</name>
+                            <name>Status of asm diskgroup &quot;{#NAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dgstatus&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>300</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -1675,7 +1675,7 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Total space on asm diskgroup &quot;$5&quot;</name>
+                            <name>Total space on asm diskgroup &quot;{#NAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>1</multiplier>
@@ -1777,7 +1777,7 @@
                             <snmp_oid/>
                             <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dfstatus&quot;,&quot;{#INDEX}&quot;]</key>
                             <delay>300</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -1856,7 +1856,7 @@
                     <description>Using {#INDEX} or {#NAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Free space on tablespace &quot;$5&quot;</name>
+                            <name>Free space on data tablespace &quot;{#NAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -1898,7 +1898,7 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Free space on tablespace &quot;$5&quot; in %</name>
+                            <name>Free space on data tablespace &quot;{#NAME}&quot; in %</name>
                             <type>15</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -1940,14 +1940,14 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Status of tablespace &quot;$5&quot;</name>
+                            <name>Status of data tablespace &quot;{#NAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsstatus&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>300</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -1982,7 +1982,7 @@
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Total space on tablespace &quot;$5&quot;</name>
+                            <name>Total space on data tablespace &quot;{#NAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -2027,7 +2027,7 @@
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsstatus&quot;,&quot;{#NAME}&quot;].str(&quot;ONLINE&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsstatus&quot;,&quot;{#NAME}&quot;].str(&quot;ZBX_NOTSUPPORTED&quot;)}#1</expression>
-                            <name>Status of tablespace &quot;{#NAME}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>Status of data tablespace &quot;{#NAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -2036,7 +2036,7 @@
                         </trigger_prototype>
                         <trigger_prototype>
                             <expression>({TRIGGER.VALUE}=0&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsfreepct&quot;,&quot;{#NAME}&quot;].max(10m)}&lt;{$TS.PFREE.WARN})|({TRIGGER.VALUE}=1&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;dtsfreepct&quot;,&quot;{#NAME}&quot;].max(10m)}&lt;{$TS.PFREE.NORM})</expression>
-                            <name>Used space of tablespace &quot;{#NAME}&quot; was too high on {HOST.NAME}</name>
+                            <name>Used space of data tablespace &quot;{#NAME}&quot; was too high on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>2</priority>
@@ -2088,7 +2088,7 @@ select tablespace_name, file_name, autoextensible&#13;
                             <snmp_oid/>
                             <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;tfstatus&quot;,&quot;{#INDEX}&quot;]</key>
                             <delay>300</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -2167,7 +2167,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <description>Using {#INDEX} or {#NAME} for filter</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Free space on tablespace &quot;$5&quot;</name>
+                            <name>Free space on temp tablespace &quot;{#NAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -2209,7 +2209,7 @@ select tablespace_name, file_name, autoextensible&#13;
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Free space on tablespace &quot;$5&quot; in %</name>
+                            <name>Free space on temp tablespace &quot;{#NAME}&quot; in %</name>
                             <type>15</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -2251,14 +2251,14 @@ select tablespace_name, file_name, autoextensible&#13;
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Status of tablespace &quot;$5&quot;</name>
+                            <name>Status of temp tablespace &quot;{#NAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttsstatus&quot;,&quot;{#NAME}&quot;]</key>
                             <delay>300</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -2293,7 +2293,7 @@ select tablespace_name, file_name, autoextensible&#13;
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Total space on tablespace &quot;$5&quot;</name>
+                            <name>Total space on temp tablespace &quot;{#NAME}&quot;</name>
                             <type>10</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -2338,7 +2338,7 @@ select tablespace_name, file_name, autoextensible&#13;
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttsstatus&quot;,&quot;{#NAME}&quot;].str(&quot;ONLINE&quot;)}#1&amp;{TP-SW-DB-ORCL-Database:chk.orcl.db[&quot;{HOST.IP}&quot;,&quot;{$PORT}&quot;,&quot;{$SID}&quot;,&quot;ttsstatus&quot;,&quot;{#NAME}&quot;].str(&quot;ZBX_NOTSUPPORTED&quot;)}#1</expression>
-                            <name>Status of tablespace &quot;{#NAME}&quot; was abnormal on {HOST.NAME}</name>
+                            <name>Status of temp tablespace &quot;{#NAME}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>

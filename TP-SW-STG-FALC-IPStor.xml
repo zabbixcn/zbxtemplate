@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-11-28T07:01:17Z</date>
+    <date>2015-01-16T11:14:59Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -78,7 +78,7 @@
                             <snmp_oid>.1.3.6.1.4.1.7368.3.2.4.1.13.{#SNMPINDEX}</snmp_oid>
                             <key>configStatus[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -206,7 +206,7 @@
                             <snmp_oid>.1.3.6.1.4.1.7368.3.3.6.2.1.28.{#SNMPINDEX}</snmp_oid>
                             <key>rrLastSuccessSyncTime[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -248,7 +248,7 @@
                             <snmp_oid>.1.3.6.1.4.1.7368.3.3.6.2.1.10.{#SNMPINDEX}</snmp_oid>
                             <key>rrReplicationStatus[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -334,7 +334,7 @@
                             <snmp_oid>.1.3.6.1.4.1.7368.3.3.3.2.1.17.1.4.{#SNMPINDEX}</snmp_oid>
                             <key>srReplicaServer[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>3600</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -376,7 +376,7 @@
                             <snmp_oid>.1.3.6.1.4.1.7368.3.3.3.2.1.17.1.10.{#SNMPINDEX}</snmp_oid>
                             <key>srReplicaInterval[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>3600</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -418,7 +418,7 @@
                             <snmp_oid>.1.3.6.1.4.1.7368.3.3.3.2.1.17.1.6.{#SNMPINDEX}</snmp_oid>
                             <key>srReplicaSchedule[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -504,7 +504,7 @@
                             <snmp_oid>.1.3.6.1.4.1.7368.3.3.3.2.1.6.{#SNMPINDEX}</snmp_oid>
                             <key>srConfigStatus[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -632,7 +632,7 @@
                             <snmp_oid>.1.3.6.1.4.1.7368.3.3.3.2.1.14.1.41.{#SNMPINDEX}</snmp_oid>
                             <key>srSnapShotResourceStatus[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -805,7 +805,7 @@
                         </trigger_prototype>
                         <trigger_prototype>
                             <expression>({TRIGGER.VALUE}=0&amp;{TP-SW-STG-FALC-IPStor:srSnapShotUsedSize64Pct[&quot;{#SNMPINDEX}&quot;].min(10m)}&gt;{$SNAP.PUSED.WARN})|({TRIGGER.VALUE}=1&amp;{TP-SW-STG-FALC-IPStor:srSnapShotUsedSize64Pct[&quot;{#SNMPINDEX}&quot;].min(10m)}&gt;{$SNAP.PUSED.NORM})</expression>
-                            <name>Snapshot used space of  SAN resource &quot;{#SNMPVALUE}&quot; was too high on {HOST.NAME}</name>
+                            <name>Snapshot used space of SAN resource &quot;{#SNMPVALUE}&quot; was too high on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>2</priority>
@@ -853,7 +853,7 @@
                             <snmp_oid>.1.3.6.1.4.1.7368.3.3.3.2.1.15.1.6.{#SNMPINDEX}</snmp_oid>
                             <key>srTimeMarkLastTimeStamp[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -895,7 +895,7 @@
                             <snmp_oid>.1.3.6.1.4.1.7368.3.3.3.2.1.15.1.5.{#SNMPINDEX}</snmp_oid>
                             <key>srTimeMarkSchedule[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>3600</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>
@@ -937,7 +937,7 @@
                             <snmp_oid>.1.3.6.1.4.1.7368.3.3.3.2.1.15.1.3.{#SNMPINDEX}</snmp_oid>
                             <key>srTimeMarkOption[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
-                            <history>90</history>
+                            <history>7</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>1</value_type>

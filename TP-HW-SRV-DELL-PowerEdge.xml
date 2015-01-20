@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-10-28T06:28:51Z</date>
+    <date>2015-01-19T13:32:59Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -42,6 +42,94 @@
             <items/>
             <discovery_rules>
                 <discovery_rule>
+                    <name>Array Battery</name>
+                    <type>10</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>lld.dell.poweredge[&quot;{HOST.IP}&quot;,&quot;{$SNMP_COMMUNITY}&quot;,&quot;rbat&quot;]</key>
+                    <delay>3600</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>:</filter>
+                    <lifetime>7</lifetime>
+                    <description/>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Status of array battery &quot;{#SNMPVALUE}&quot;</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.674.10893.1.20.130.15.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>batteryRollUpStatus[&quot;{#SNMPINDEX}&quot;]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Battery</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>Dell Open Manage System Status</name>
+                            </valuemap>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{TP-HW-SRV-DELL-PowerEdge:batteryRollUpStatus[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;4</expression>
+                            <name>Status of array battery &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
                     <name>Array Controller</name>
                     <type>10</type>
                     <snmp_community/>
@@ -75,8 +163,8 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid>.1.3.6.1.4.1.674.10893.1.20.130.1.1.5.{#SNMPINDEX}</snmp_oid>
-                            <key>controllerState[&quot;{#SNMPINDEX}&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.674.10893.1.20.130.1.1.37.{#SNMPINDEX}</snmp_oid>
+                            <key>controllerRollUpStatus[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -103,24 +191,21 @@
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>unknown(0)&#13;
-ready(1)&#13;
-failed(2)&#13;
-online(3)&#13;
-offline(4)&#13;
-degraded(6)</description>
+                            <description/>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
                                     <name>Disk</name>
                                 </application>
                             </applications>
-                            <valuemap/>
+                            <valuemap>
+                                <name>Dell Open Manage System Status</name>
+                            </valuemap>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-DELL-PowerEdge:controllerState[&quot;{#SNMPINDEX}&quot;].last(0)}#1&amp;{TP-HW-SRV-DELL-PowerEdge:controllerState[&quot;{#SNMPINDEX}&quot;].last(0)}#3</expression>
+                            <expression>{TP-HW-SRV-DELL-PowerEdge:controllerRollUpStatus[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;4</expression>
                             <name>Status of array controller &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -583,8 +668,8 @@ yes(2)</description>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid>.1.3.6.1.4.1.674.10893.1.20.130.4.1.4.{#SNMPINDEX}</snmp_oid>
-                            <key>arrayDiskState[&quot;{#SNMPINDEX}&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.674.10893.1.20.130.4.1.23.{#SNMPINDEX}</snmp_oid>
+                            <key>arrayDiskRollUpStatus[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -611,37 +696,16 @@ yes(2)</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>unknown(0)&#13;
-ready(1)&#13;
-failed(2)&#13;
-online(3)&#13;
-offline(4)&#13;
-degraded(6)&#13;
-recovering(7)&#13;
-removed(11)&#13;
-non-raid(13)&#13;
-notReady(14)&#13;
-resynching(15)&#13;
-replacing(22)&#13;
-spinningDown(23)&#13;
-rebuild(24)&#13;
-noMedia(25)&#13;
-formatting(26)&#13;
-diagnostics(28)&#13;
-predictiveFailure(34)&#13;
-initializing(35)&#13;
-foreign(39)&#13;
-clear(40)&#13;
-unsupported(41)&#13;
-incompatible(53)&#13;
-readOnly(56)</description>
+                            <description/>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
                                     <name>Disk</name>
                                 </application>
                             </applications>
-                            <valuemap/>
+                            <valuemap>
+                                <name>Dell Open Manage System Status</name>
+                            </valuemap>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
@@ -655,7 +719,7 @@ readOnly(56)</description>
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-DELL-PowerEdge:arrayDiskState[&quot;{#SNMPINDEX}&quot;].last(0)}#1&amp;{TP-HW-SRV-DELL-PowerEdge:arrayDiskState[&quot;{#SNMPINDEX}&quot;].last(0)}#3</expression>
+                            <expression>{TP-HW-SRV-DELL-PowerEdge:arrayDiskRollUpStatus[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;3</expression>
                             <name>Status of physical drive &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>
@@ -894,8 +958,8 @@ failed(10)</description>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid>.1.3.6.1.4.1.674.10893.1.20.140.1.1.4.{#SNMPINDEX}</snmp_oid>
-                            <key>virtualDiskState[&quot;{#SNMPINDEX}&quot;]</key>
+                            <snmp_oid>.1.3.6.1.4.1.674.10893.1.20.140.1.1.19.{#SNMPINDEX}</snmp_oid>
+                            <key>virtualDiskRollUpStatus[&quot;{#SNMPINDEX}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -922,34 +986,21 @@ failed(10)</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>unknown(0)&#13;
-ready(1)&#13;
-failed(2)&#13;
-online(3)&#13;
-offline(4)&#13;
-degraded(6)&#13;
-verifying(7)&#13;
-resynching(15)&#13;
-regenerating(16)&#13;
-failedRedundancy(18)&#13;
-rebuilding(24)&#13;
-formatting(26)&#13;
-reconstructing(32)&#13;
-initializing(35)&#13;
-backgroundInit(36)&#13;
-permanentlyDegraded(52)</description>
+                            <description/>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
                                     <name>Disk</name>
                                 </application>
                             </applications>
-                            <valuemap/>
+                            <valuemap>
+                                <name>Dell Open Manage System Status</name>
+                            </valuemap>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{TP-HW-SRV-DELL-PowerEdge:virtualDiskState[&quot;{#SNMPINDEX}&quot;].last()}#1&amp;{TP-HW-SRV-DELL-PowerEdge:virtualDiskState[&quot;{#SNMPINDEX}&quot;].last()}#3</expression>
+                            <expression>{TP-HW-SRV-DELL-PowerEdge:virtualDiskRollUpStatus[&quot;{#SNMPINDEX}&quot;].last(0)}&gt;4</expression>
                             <name>Status of virtual disk &quot;{#SNMPVALUE}&quot; was abnormal on {HOST.NAME}</name>
                             <url/>
                             <status>0</status>

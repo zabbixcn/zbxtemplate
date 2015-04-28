@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-09-15T07:51:33Z</date>
+    <date>2015-04-28T11:11:15Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -158,12 +158,16 @@
                     <value>20</value>
                 </macro>
                 <macro>
+                    <macro>{$PING.RST.WARN}</macro>
+                    <value>#1</value>
+                </macro>
+                <macro>
                     <macro>{$PING.SEC.WARN}</macro>
                     <value>0.2</value>
                 </macro>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>1.0.1</value>
+                    <value>1.0.2</value>
                 </macro>
             </macros>
             <templates/>
@@ -182,7 +186,7 @@
             <dependencies>
                 <dependency>
                     <name>{HOST.NAME} was unavailable</name>
-                    <expression>{TP-BS-ICMP-Ping:icmpping.last(0)}=0</expression>
+                    <expression>{TP-BS-ICMP-Ping:icmpping.max({$PING.RST.WARN})}=0</expression>
                 </dependency>
             </dependencies>
         </trigger>
@@ -197,7 +201,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{TP-BS-ICMP-Ping:icmpping.last(0)}=0</expression>
+            <expression>{TP-BS-ICMP-Ping:icmpping.max({$PING.RST.WARN})}=0</expression>
             <name>{HOST.NAME} was unavailable</name>
             <url/>
             <status>0</status>

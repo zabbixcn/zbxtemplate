@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-10-28T06:20:19Z</date>
+    <date>2015-08-14T08:29:16Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -141,8 +141,8 @@
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid>IF-MIB::ifInOctets.{#SNMPINDEX}</snmp_oid>
-                            <key>ifInOctets[&quot;{#SNMPINDEX}&quot;]</key>
+                            <snmp_oid>IF-MIB::if{#SNMPHC}InOctets.{#SNMPINDEX}</snmp_oid>
+                            <key>ifInOctets[&quot;{#SNMPINDEX}&quot;,&quot;{#SNMPHC}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -317,8 +317,8 @@ lowerLayerDown(7)</description>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
-                            <snmp_oid>IF-MIB::ifOutOctets.{#SNMPINDEX}</snmp_oid>
-                            <key>ifOutOctets[&quot;{#SNMPINDEX}&quot;]</key>
+                            <snmp_oid>IF-MIB::if{#SNMPHC}OutOctets.{#SNMPINDEX}</snmp_oid>
+                            <key>ifOutOctets[&quot;{#SNMPINDEX}&quot;,&quot;{#SNMPHC}&quot;]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
@@ -394,7 +394,7 @@ lowerLayerDown(7)</description>
                                     <type>0</type>
                                     <item>
                                         <host>TP-BS-SNMP-NET-Interface</host>
-                                        <key>ifInOctets[&quot;{#SNMPINDEX}&quot;]</key>
+                                        <key>ifInOctets[&quot;{#SNMPINDEX}&quot;,&quot;{#SNMPHC}&quot;]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
@@ -406,7 +406,7 @@ lowerLayerDown(7)</description>
                                     <type>0</type>
                                     <item>
                                         <host>TP-BS-SNMP-NET-Interface</host>
-                                        <key>ifOutOctets[&quot;{#SNMPINDEX}&quot;]</key>
+                                        <key>ifOutOctets[&quot;{#SNMPINDEX}&quot;,&quot;{#SNMPHC}&quot;]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -422,7 +422,7 @@ lowerLayerDown(7)</description>
                 </macro>
                 <macro>
                     <macro>{$VERSION}</macro>
-                    <value>2.0.1</value>
+                    <value>2.0.2</value>
                 </macro>
             </macros>
             <templates/>
